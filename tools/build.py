@@ -67,10 +67,33 @@ def simp(pts,tol=0.0004):
             if d>dm: dm=d; im=i
         if dm>tol: keep.append(im); stack+=[(a,im),(im,b)]
     return [pts[i] for i in sorted(keep)]
+def pieces(g):
+    """split one routed segment into paved / gravel / ferry pieces, using the distance ranges from the router"""
+    co=g["coords"]
+    if g["ferry"]: return [{"f":True,"c":[[round(c[1],5),round(c[0],5)] for c in co]}]
+    cum=[0]
+    for a,b in zip(co,co[1:]):
+        k=math.cos(math.radians(a[1])); cum.append(cum[-1]+math.hypot((b[0]-a[0])*k,b[1]-a[1])*111200)
+    sc=cum[-1]/g["msg_m"] if g.get("msg_m") else 1
+    gr=[]
+    for a,b in g.get("unp_r",[]):
+        if gr and a-gr[-1][1]<150: gr[-1][1]=b          # bridge short paved gaps
+        else: gr.append([a,b])
+    iv=[(a*sc,b*sc,"g") for a,b in gr if b-a>=200]+[(a*sc,b*sc,"f") for a,b in g.get("fer_r",[])]
+    def typ(m):
+        for a,b,t in iv:
+            if a<=m<b: return t
+        return "p"
+    out=[]; cur=None
+    for i in range(len(co)-1):
+        t=typ((cum[i]+cum[i+1])/2)
+        if t!=cur: out.append([t,[co[i]]]); cur=t
+        out[-1][1].append(co[i+1])
+    return [dict({"f":t=="f","c":[[round(c[1],5),round(c[0],5)] for c in simp(c2)]},**({"g":1} if t=="g" else {})) for t,c2 in out]
 def entry(s,landmarks,huts):
     return {"name":s["name"],"km":round(s["km"]),"asc":int(round(s["asc"],-1)),"unp":round(s["unpaved_km"]),"ferries":len(s["ferries"]),
             "lm":lms(landmarks,s),"huts":huts,
-            "segs":[{"f":g["ferry"],"c":[[round(c[1],5),round(c[0],5)] for c in simp(g["coords"])]} for g in s["segs"]]}
+            "segs":[x for g in s["segs"] for x in pieces(g)]}
 mh=huts_for(st)
 main=[entry(s,LANDMARKS.get(i,[]),mh[i-1]) for i,s in enumerate(st,1)]
 names=[s["name"] for s in st]

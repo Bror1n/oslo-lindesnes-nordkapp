@@ -22,19 +22,22 @@ def ascent(coords,thr=12):
 def analyse(f):
     pr=f["properties"]; m=pr["messages"]; h=m[0]
     iD,iT,iLo,iLa=h.index("Distance"),h.index("WayTags"),h.index("Longitude"),h.index("Latitude")
-    ferry_m=0; unpaved=0; path=0; tunnels=[]; cur=None
+    ferry_m=0; unpaved=0; path=0; tunnels=[]; cur=None; pos=0; unp_r=[]; fer_r=[]
+    def add(L,a,b):
+        if L and a-L[-1][1]<1: L[-1][1]=b
+        else: L.append([a,b])
     for row in m[1:]:
-        d=int(row[iD]); t=row[iT]
+        d=int(row[iD]); t=row[iT]; p0=pos; pos+=d
         tags=dict(x.split("=",1) for x in t.split() if "=" in x)
-        if tags.get("route")=="ferry": ferry_m+=d; cur=None; continue
+        if tags.get("route")=="ferry": ferry_m+=d; cur=None; add(fer_r,p0,pos); continue
         surf=tags.get("surface",""); hw=tags.get("highway","")
-        if surf in("gravel","unpaved","compacted","fine_gravel","dirt","ground","pebblestone","sand","grass","earth","mud") or (hw=="track" and surf not in("asphalt","paved","concrete")): unpaved+=d
+        if surf in("gravel","unpaved","compacted","fine_gravel","dirt","ground","pebblestone","sand","grass","earth","mud") or (hw=="track" and surf not in("asphalt","paved","concrete")): unpaved+=d; add(unp_r,p0,pos)
         if hw in("path","footway","steps") and surf not in("asphalt","paved","concrete"): path+=d
         if tags.get("tunnel")=="yes":
             if cur: cur["m"]+=d
             else: cur={"m":d,"lat":int(row[iLa])/1e6,"lon":int(row[iLo])/1e6,"hw":hw}; tunnels.append(cur)
         else: cur=None
-    return {"ferry_m":ferry_m,"unpaved_m":unpaved,"path_m":path,"tunnels":[t for t in tunnels if t["m"]>=400]}
+    return {"msg_m":pos,"unp_r":unp_r,"fer_r":fer_r,"ferry_m":ferry_m,"unpaved_m":unpaved,"path_m":path,"tunnels":[t for t in tunnels if t["m"]>=400]}
 def brouter(a,b,prof="trekking"):
     key=f"{prof}|{a}|{b}|{geo[a]['lat']:.4f},{geo[a]['lon']:.4f}|{geo[b]['lat']:.4f},{geo[b]['lon']:.4f}"
     if key in segc: return segc[key]
@@ -74,12 +77,34 @@ def route_stages(STAGES,prev=None):
             if r["path_m"]>500: notes.append(f"PATH {r['path_m']/1000:.1f}km")
             print(f"   {a} -> {b}: {ride:.1f} km, +{asc:.0f} m (brouter +{r['asc_br']:.0f}; straight {d/1000:.0f}) unpaved {r['unpaved_m']/1000:.1f} {' '.join(notes)}")
             for t in r["tunnels"]: print(f"        tunnel {t['m']} m at {t['lat']:.4f},{t['lon']:.4f} ({t['hw']})")
-            st["segs"].append({"ferry":False,"coords":r["coords"]}); st["km"]+=ride; st["asc"]+=asc; st["asc_br"]+=r["asc_br"]
+            st["segs"].append({"ferry":False,"coords":r["coords"],"msg_m":r.get("msg_m",0),"unp_r":r.get("unp_r",[]),"fer_r":r.get("fer_r",[])}); st["km"]+=ride; st["asc"]+=asc; st["asc_br"]+=r["asc_br"]
             st["unpaved_km"]+=r["unpaved_m"]/1000; st["path_km"]+=r["path_m"]/1000; st["tunnels"]+=r["tunnels"]
         print(f"{len(out)+1:2d}. {name}: {st['km']:.0f} km, +{st['asc']:.0f} m (br {st['asc_br']:.0f}), unpaved {st['unpaved_km']:.0f} km, ferries: {st['ferries']}")
         st['points']=[p.replace('fast:','') for p in chain]; out.append(st); prev=pts[-1].replace('fast:','')
     return out
+def upgrade():
+    """re-fetch cached segments that lack per-stretch surface ranges; keep the cached geometry"""
+    todo=[k for k,v in segc.items() if "unp_r" not in v and k.count("|")==4]; print("to upgrade",len(todo),flush=True)
+    for n,k in enumerate(todo):
+        prof,a,b2,ca,cb=k.split("|"); la1,lo1=ca.split(","); la2,lo2=cb.split(",")
+        A,B=geo.get(a),geo.get(b2)
+        if not A or not B or f"{A['lat']:.4f},{A['lon']:.4f}"!=ca or f"{B['lat']:.4f},{B['lon']:.4f}"!=cb: continue
+        url="https://brouter.de/brouter?"+urllib.parse.urlencode({"lonlats":f"{A['lon']},{A['lat']}|{B['lon']},{B['lat']}","profile":prof,"alternativeidx":0,"format":"geojson"})
+        for attempt in range(6):
+            try:
+                f=json.loads(urllib.request.urlopen(urllib.request.Request(url,headers={"User-Agent":"bike-route-planner/0.1"}),timeout=120).read().decode())["features"][0]
+                an=analyse(f); L=float(f["properties"]["track-length"]); old=segc[k]
+                drift=abs(L-old["len"])/max(old["len"],1)
+                if drift>0.02: old.update({"coords":f["geometry"]["coordinates"],"len":L,"asc_br":float(f["properties"]["filtered ascend"])}); old.update(an); print("  CHANGED",k[:60],f"{drift:.1%}",flush=True)
+                else: old.update({"msg_m":an["msg_m"],"unp_r":an["unp_r"],"fer_r":an["fer_r"]})
+                break
+            except Exception as e:
+                print("  retry",k[:50],str(e)[:60],flush=True); time.sleep(20*(attempt+1))
+        if n%10==0: json.dump(segc,open(cache_p,"w")); print(n,flush=True)
+        time.sleep(1.5)
+    json.dump(segc,open(cache_p,"w")); print("left",sum(1 for v in segc.values() if "unp_r" not in v))
 if __name__=="__main__":
+    if "upgrade" in sys.argv: upgrade(); sys.exit()
     if "variants" in sys.argv:
         res={}
         for v in VARIANTS:

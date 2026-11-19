@@ -20,6 +20,7 @@
  .legend label:has(input:not(:checked)) .mk{background:#b6bdc7}
  .legend label::after{content:'shown';font-size:11px;color:var(--mute)}
  .legend label:has(input:not(:checked))::after{content:'hidden'}
+ .key{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 14px 10px;font-size:12px;color:#3b4553} .key span{display:inline-flex;align-items:center;gap:6px}
  .part{padding:6px 14px;font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#fff}
  .st{display:flex;align-items:center;gap:8px;width:100%;padding:8px 14px;border:0;border-bottom:1px solid var(--line);background:none;font:inherit;color:inherit;text-align:left;cursor:pointer}
  .st:hover{background:#f0f3f7} .st[aria-expanded=true]{background:var(--hi)}
@@ -67,6 +68,9 @@
  <label><input type="checkbox" id="tD" checked><span class="mk d"></span>Detours</label>
  <label><input type="checkbox" id="tH" checked><span class="mk h"></span>Cabins</label>
 </div>
+<p class="key"><span><svg width="34" height="10" aria-hidden="true"><line x1="0" y1="5" x2="34" y2="5" stroke="#15803d" stroke-width="4"/></svg>Paved</span>
+ <span><svg width="34" height="10" aria-hidden="true"><line x1="0" y1="5" x2="34" y2="5" stroke="#1f2937" stroke-width="7"/><line x1="0" y1="5" x2="34" y2="5" stroke="#fbbf24" stroke-width="4" stroke-dasharray="7 5"/></svg>Gravel</span>
+ <span><svg width="34" height="10" aria-hidden="true"><line x1="0" y1="5" x2="34" y2="5" stroke="#475569" stroke-width="2" stroke-dasharray="5 6"/></svg>Ferry or bus</span></p>
 <div class="opts"><h2>Alternative routes</h2><div id="vlist"></div></div>
 <div id="list"></div></div><div id="map"></div></div>
 <script>
@@ -99,13 +103,14 @@ function render(){
   const seq=sequence();let lastPart=null;
   seq.forEach((it,idx)=>{const s=it.s,n=idx+1,color=it.alt?ALT:it.part[3];
     const g=L.featureGroup();
-    s.segs.forEach(x=>L.polyline(x.c,x.f?{color:'#475569',weight:2,dashArray:'5 6'}:{color,weight:4,opacity:.9}).addTo(g));
+    s.segs.forEach(x=>{if(x.g){L.polyline(x.c,{color:'#1f2937',weight:7,opacity:.95,lineCap:'butt'}).addTo(g);L.polyline(x.c,{color:'#fbbf24',weight:4,dashArray:'7 5',lineCap:'butt'}).addTo(g)}
+      else L.polyline(x.c,x.f?{color:'#475569',weight:2,dashArray:'5 6'}:{color,weight:4,opacity:.9}).addTo(g)});
     L.circleMarker(s.segs[0].c[0],{radius:3.5,color:'#fff',weight:1.5,fillColor:color,fillOpacity:1,interactive:false}).addTo(g);
-    g.bindTooltip(`${n}. ${s.name} · ${s.km} km · +${s.asc} m`,{sticky:true});g.addTo(all);
+    g.bindTooltip(`${n}. ${s.name} · ${s.km} km · +${s.asc} m${s.unp?` · ${s.unp} km gravel`:''}`,{sticky:true});g.addTo(all);
     if(it.part!==lastPart){lastPart=it.part;const h=document.createElement('div');h.className='part';h.style.background=it.part[3];h.textContent=it.part[2];list.appendChild(h)}
     const nd=s.lm.filter(l=>l.k==='d').length,nr=s.lm.length-nd;
     const btn=document.createElement('button');btn.className='st'+(it.alt?' alt':'');btn.type='button';btn.setAttribute('aria-expanded','false');
-    btn.innerHTML=`<b>${n}</b><span class="nm">${esc(s.name)}<span class="cnt">${nr} landmark${nr===1?'':'s'}${nd?` · ${nd} detour${nd===1?'':'s'}`:''}${s.huts.length?` · ${s.huts.length} cabin${s.huts.length===1?'':'s'}`:''}</span></span><span class="num">${s.km} km<br>+${s.asc} m</span><span class="chev"></span>`;
+    btn.innerHTML=`<b>${n}</b><span class="nm">${esc(s.name)}<span class="cnt">${nr} landmark${nr===1?'':'s'}${nd?` · ${nd} detour${nd===1?'':'s'}`:''}${s.huts.length?` · ${s.huts.length} cabin${s.huts.length===1?'':'s'}`:''}${s.unp?` · ${s.unp} km gravel`:''}</span></span><span class="num">${s.km} km<br>+${s.asc} m</span><span class="chev"></span>`;
     const panel=document.createElement('div');panel.className='panel';panel.hidden=true;
     const label=`<span class="s">Stage ${n} · ${esc(s.name)}</span>`;
     s.lm.forEach(l=>{
@@ -134,7 +139,7 @@ function render(){
     g.bindTooltip(`Alternative: ${v.title} (${sgn(v.dkm,'km')}, ${sgn(v.ddays)} day${Math.abs(v.ddays)===1?'':'s'}). Click to switch on.`,{sticky:true});
     g.on('click',()=>setVariant(v.id,true));g.addTo(ghost)});
   const km=seq.reduce((a,x)=>a+x.s.km,0),asc=seq.reduce((a,x)=>a+x.s.asc,0);
-  document.getElementById('sum').textContent=`${seq.length} stages · ${fmt(km)} km · ${fmt(asc)} m climbing · ${seq.reduce((a,x)=>a+x.s.lm.length,0)} landmarks and detours · ${seq.reduce((a,x)=>a+x.s.huts.length,0)} backup cabins. Dashed grey lines are ferries or a bus. Click a day to open it.`;
+  document.getElementById('sum').textContent=`${seq.length} stages · ${fmt(km)} km · ${fmt(asc)} m climbing · ${seq.reduce((a,x)=>a+x.s.lm.length,0)} landmarks and detours · ${seq.reduce((a,x)=>a+x.s.huts.length,0)} backup cabins. Click a day to open it.`;
   document.querySelectorAll('.vb').forEach(b=>b.setAttribute('aria-pressed',active.has(b.dataset.id)));
   try{history.replaceState(null,'',active.size?'#v='+[...active].join(','):location.pathname+location.search)}catch(e){}
 }
