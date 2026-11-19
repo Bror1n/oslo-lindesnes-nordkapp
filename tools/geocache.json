@@ -1,0 +1,978 @@
+{
+ "Oslo rådhus, Oslo": {
+  "lat": 59.9120806,
+  "lon": 10.7337247,
+  "display": "Oslo rådhus, Hieronymus Heyerdahls gate, Vika, Sentrum, Oslo, 0160, Norge",
+  "type": "townhall",
+  "fixed": true
+ },
+ "Drammen": {
+  "lat": 59.7436802,
+  "lon": 10.2043644,
+  "display": "Drammen, Buskerud, 3017, Norge",
+  "type": "city",
+  "fixed": true
+ },
+ "Holmestrand": {
+  "lat": 59.4899583,
+  "lon": 10.3150445,
+  "display": "Holmestrand, Vestfold, 3080, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Tønsberg": {
+  "lat": 59.2677363,
+  "lon": 10.4080715,
+  "display": "Tønsberg, Vestfold, 3126, Norge",
+  "type": "city",
+  "fixed": true
+ },
+ "Larvik": {
+  "lat": 59.053173,
+  "lon": 10.027182,
+  "display": "Larvik, Vestfold, 3256, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Stavern": {
+  "lat": 58.9983397,
+  "lon": 10.0360061,
+  "display": "Stavern, Larvik, Vestfold, 3290, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Helgeroa": {
+  "lat": 58.9937289,
+  "lon": 9.8633258,
+  "display": "Helgeroa, Larvik, Vestfold, 3295, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Brevik, Porsgrunn": {
+  "lat": 59.0528886,
+  "lon": 9.699978,
+  "display": "Brevik, Porsgrunn, Telemark, 3960, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Kragerø": {
+  "lat": 58.8696217,
+  "lon": 9.4142145,
+  "display": "Kragerø, Telemark, Norge",
+  "type": "administrative"
+ },
+ "Risør": {
+  "lat": 58.7206541,
+  "lon": 9.2342979,
+  "display": "Risør, Agder, 4956, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Tvedestrand": {
+  "lat": 58.6226384,
+  "lon": 8.9312364,
+  "display": "Tvedestrand, Agder, Norge",
+  "type": "administrative"
+ },
+ "Arendal": {
+  "lat": 58.4600196,
+  "lon": 8.765288,
+  "display": "Arendal, Agder, 4836, Norge",
+  "type": "city",
+  "fixed": true
+ },
+ "Grimstad": {
+  "lat": 58.3413026,
+  "lon": 8.5934098,
+  "display": "Grimstad, Agder, 4876, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Lillesand": {
+  "lat": 58.2489597,
+  "lon": 8.3779203,
+  "display": "Lillesand, Agder, 4790, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Kristiansand": {
+  "lat": 58.14615,
+  "lon": 7.9957333,
+  "display": "Kristiansand, Agder, 4611, Norge",
+  "type": "city",
+  "fixed": true
+ },
+ "Mandal": {
+  "lat": 58.0268181,
+  "lon": 7.4534802,
+  "display": "Mandal, Lindesnes, Agder, 4514, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Spangereid": {
+  "lat": 58.0460295,
+  "lon": 7.1425006,
+  "display": "Spangereid, Lindesnes, Agder, 4521, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Lindesnes fyr": {
+  "lat": 57.9824978,
+  "lon": 7.0466733,
+  "display": "Lindesnes fyr, Fyrstien, Lindesnes, Agder, 4586, Norge",
+  "type": "lighthouse",
+  "fixed": true
+ },
+ "Vigeland, Lindesnes": {
+  "lat": 58.0826837,
+  "lon": 7.3043807,
+  "display": "Vigeland, Lindesnes, Agder, 4520, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Marnardal": {
+  "lat": 58.2132998,
+  "lon": 7.5135914,
+  "display": "Marnardal, Lindesnes, Agder, 4534, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Bjelland, Lindesnes": {
+  "lat": 58.3839795,
+  "lon": 7.5268354,
+  "display": "Bjelland, Lindesnes, Agder, 4536, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Evje": {
+  "lat": 58.5876417,
+  "lon": 7.8076938,
+  "display": "Evje, Evje og Hornnes, Agder, 4735, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Byglandsfjord": {
+  "lat": 58.6675708,
+  "lon": 7.8076569,
+  "display": "Byglandsfjord, Bygland, Agder, 4741, Norge",
+  "type": "village"
+ },
+ "Bygland": {
+  "lat": 58.82951,
+  "lon": 7.7979206,
+  "display": "Bygland, Agder, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Valle, Agder": {
+  "lat": 59.2119382,
+  "lon": 7.5368833,
+  "display": "Valle, Agder, 4747, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Bykle": {
+  "lat": 59.3553582,
+  "lon": 7.3582929,
+  "display": "Bykle, Agder, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Hovden, Bykle": {
+  "lat": 59.5628098,
+  "lon": 7.3557791,
+  "display": "Hovden, Bykle, Agder, 4755, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Haukeligrend": {
+  "lat": 59.7359557,
+  "lon": 7.5578159,
+  "display": "Haukeli, Vinje, Telemark, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Dyrskar": {
+  "lat": 59.83807,
+  "lon": 7.0362633,
+  "display": "Dyrskar, Ullensvang, Vestland, Norge",
+  "type": "yes",
+  "fixed": true
+ },
+ "Røldal": {
+  "lat": 59.8333844,
+  "lon": 6.8151977,
+  "display": "Røldal, Ullensvang, Vestland, 5760, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Seljestad, Ullensvang": {
+  "lat": 59.8920215,
+  "lon": 6.6421181,
+  "display": "Seljestad, Ullensvang, Vestland, 5763, Norge",
+  "type": "hamlet",
+  "fixed": true
+ },
+ "Odda": {
+  "lat": 60.0679248,
+  "lon": 6.5469316,
+  "display": "Odda, Ullensvang, Vestland, 5750, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Kinsarvik": {
+  "lat": 60.3757875,
+  "lon": 6.7196524,
+  "display": "Kinsarvik, Ullensvang, Vestland, 5780, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Eidfjord": {
+  "lat": 60.4667799,
+  "lon": 7.0701188,
+  "display": "Eidfjord, Vestland, 5783, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Vøringsfossen": {
+  "lat": 60.4270509,
+  "lon": 7.2508812,
+  "display": "Vøringsfossen, Eidfjord, Vestland, 5785, Norge",
+  "type": "waterfall",
+  "fixed": true
+ },
+ "Haugastøl": {
+  "lat": 60.5112844,
+  "lon": 7.8701441,
+  "display": "Haugastøl, Dansarfeten, Haugastøl, Hol, Buskerud, 3595, Norge",
+  "type": "station",
+  "fixed": true
+ },
+ "Finse": {
+  "lat": 60.60301,
+  "lon": 7.5020162,
+  "display": "Finse, Ulvik, Vestland, 5719, Norge",
+  "type": "hamlet",
+  "fixed": true
+ },
+ "Hallingskeid": {
+  "lat": 60.6676813,
+  "lon": 7.2496979,
+  "display": "Hallingskeid, Ulvik, Vestland, Norge",
+  "type": "hamlet",
+  "fixed": true
+ },
+ "Myrdal, Aurland": {
+  "lat": 60.7351714,
+  "lon": 7.1228288,
+  "display": "Myrdal, Flåmsdalsvegen, Kårdal, Aurland, Vestland, 5718, Norge",
+  "type": "station",
+  "fixed": true
+ },
+ "Flåm": {
+  "lat": 60.8629525,
+  "lon": 7.1131783,
+  "display": "Flåm, A-feltvegen, Fretheim, Flåm, Aurland, Vestland, 5743, Norge",
+  "type": "station",
+  "fixed": true
+ },
+ "Aurlandsvangen": {
+  "lat": 60.9057573,
+  "lon": 7.1869771,
+  "display": "Aurlandsvangen, Aurland, Vestland, 5745, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Lærdalsøyri": {
+  "lat": 61.0987561,
+  "lon": 7.4825328,
+  "display": "Lærdalsøyri, Lærdal, Vestland, 6887, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Fodnes": {
+  "lat": 60.9850202,
+  "lon": 9.1799191,
+  "display": "Fodnes, Fagernes, Nord-Aurdal, Innlandet, 2900, Norge",
+  "type": "hamlet"
+ },
+ "Mannheller": {
+  "lat": 61.1601043,
+  "lon": 7.3363598,
+  "display": "Mannheller, Sogndal, Vestland, Norge",
+  "type": "locality",
+  "fixed": true
+ },
+ "Sogndal": {
+  "lat": 61.2312231,
+  "lon": 7.1029297,
+  "display": "Sogndal, Vestland, 6856, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Gaupne": {
+  "lat": 61.4046801,
+  "lon": 7.2945685,
+  "display": "Gaupne, Luster, Vestland, 6868, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Skjolden": {
+  "lat": 68.2753696,
+  "lon": 14.1919274,
+  "display": "Skjolden, Vågan, Nordland, 8314, Norge",
+  "type": "peak"
+ },
+ "Turtagrø": {
+  "lat": 61.5037834,
+  "lon": 7.8038204,
+  "display": "Turtagrø, Sognefjellsvegen, Luster, Vestland, 6877, Norge",
+  "type": "rest_area",
+  "fixed": true
+ },
+ "Sognefjellshytta": {
+  "lat": 61.5649449,
+  "lon": 7.9978998,
+  "display": "Sognefjellshytta, Sognefjellsvegen, Lom, Innlandet, Norge",
+  "type": "alpine_hut",
+  "fixed": true
+ },
+ "Bøverdalen": {
+  "lat": 64.2141223,
+  "lon": 11.5948306,
+  "display": "Bøverdalen, Steinkjer, Trøndelag, Norge",
+  "type": "farm"
+ },
+ "Lom": {
+  "lat": 61.8383,
+  "lon": 8.568
+ },
+ "Vågåmo": {
+  "lat": 61.875734,
+  "lon": 9.0962243,
+  "display": "Vågåmo, Vågå, Innlandet, 2680, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Otta": {
+  "lat": 61.8573229,
+  "lon": 8.6345243,
+  "display": "Otta, Norge",
+  "type": "river"
+ },
+ "Dombås": {
+  "lat": 62.0755539,
+  "lon": 9.1278983,
+  "display": "Dombås, Dovre, Innlandet, 2660, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Fokstugu": {
+  "lat": 62.1418539,
+  "lon": 9.2178178,
+  "display": "Fokstugu landskapsvernområde, Innlandet, Norge",
+  "type": "protected_area",
+  "fixed": true
+ },
+ "Hjerkinn": {
+  "lat": 62.2231281,
+  "lon": 9.5500317,
+  "display": "Hjerkinn, Dovre, Innlandet, 2661, Norge",
+  "type": "quarter",
+  "fixed": true
+ },
+ "Kongsvoll": {
+  "lat": 62.3029778,
+  "lon": 9.605775,
+  "display": "Kongsvoll, Oppdal, Trøndelag, Norge",
+  "type": "hamlet",
+  "fixed": true
+ },
+ "Oppdal": {
+  "lat": 62.5951546,
+  "lon": 9.6896436,
+  "display": "Oppdal, Trøndelag, 7344, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Berkåk": {
+  "lat": 62.8280291,
+  "lon": 10.0095189,
+  "display": "Berkåk, Rennebu, Trøndelag, 7391, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Støren": {
+  "lat": 63.8563292,
+  "lon": 9.9013719,
+  "display": "Støren, Ørland, Trøndelag, 7168, Norge",
+  "type": "peak"
+ },
+ "Melhus": {
+  "lat": 63.2859208,
+  "lon": 10.2773284,
+  "display": "Melhus, Trøndelag, 7224, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Trondheim": {
+  "lat": 63.4304475,
+  "lon": 10.3952118,
+  "display": "Trondheim, Trøndelag, Norge",
+  "type": "administrative"
+ },
+ "Stjørdal": {
+  "lat": 63.4683597,
+  "lon": 10.9239498,
+  "display": "Stjørdal, Trøndelag, 7500, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Levanger": {
+  "lat": 63.746342,
+  "lon": 11.2999563,
+  "display": "Levanger, Trøndelag, 7600, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Verdalsøra": {
+  "lat": 63.7927932,
+  "lon": 11.4820286,
+  "display": "Verdalsøra, Verdal, Trøndelag, 7650, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Steinkjer": {
+  "lat": 64.0151848,
+  "lon": 11.4956649,
+  "display": "Steinkjer, Trøndelag, 7714, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Malm, Steinkjer": {
+  "lat": 64.0702638,
+  "lon": 11.2173077,
+  "display": "Malm, Steinkjer, Trøndelag, 7790, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Namsos": {
+  "lat": 64.4662492,
+  "lon": 11.4957765,
+  "display": "Namsos, Trøndelag, 7800, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Lund, Nærøysund": {
+  "lat": 64.9674834,
+  "lon": 12.0468584,
+  "display": "Lund, Nærøysund, Trøndelag, 7985, Norge",
+  "type": "farm"
+ },
+ "Hofles": {
+  "lat": 64.8274502,
+  "lon": 11.6126373,
+  "display": "Hofles, Skagavegen, Hoflesja, Nærøysund, Trøndelag, 7970, Norge",
+  "type": "ferry_terminal",
+  "fixed": true
+ },
+ "Foldereid": {
+  "lat": 64.9628199,
+  "lon": 12.1774334,
+  "display": "Foldereid, Nærøysund, Trøndelag, 7985, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Holm, Bindal": {
+  "lat": 65.1833531,
+  "lon": 12.124369,
+  "display": "Holm, Bindal, Nordland, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Vennesund": {
+  "lat": 65.2167228,
+  "lon": 12.0448481,
+  "display": "Vennesund, Sømna, Nordland, Norge",
+  "type": "hamlet",
+  "fixed": true
+ },
+ "Brønnøysund": {
+  "lat": 65.4748755,
+  "lon": 12.2116394,
+  "display": "Brønnøysund, Brønnøy, Nordland, 8900, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Horn, Brønnøy": {
+  "lat": 65.5730566,
+  "lon": 12.3052028,
+  "display": "Horn, Storhorn, Brønnøy, Nordland, Norge",
+  "type": "primary",
+  "fixed": true
+ },
+ "Andalsvåg": {
+  "lat": 65.578149,
+  "lon": 12.391087,
+  "display": "Andalsvåg, Forvikveien, Vevelstad, Nordland, Norge",
+  "type": "bus_stop",
+  "fixed": true
+ },
+ "Forvik": {
+  "lat": 65.7151921,
+  "lon": 12.4635236,
+  "display": "Forvik, Vevelstad, Nordland, 8976, Norge",
+  "type": "hamlet",
+  "fixed": true
+ },
+ "Tjøtta": {
+  "lat": 65.8377176,
+  "lon": 12.4590643,
+  "display": "Tjøtta, Alstahaug, Nordland, 8860, Norge",
+  "type": "island",
+  "fixed": true
+ },
+ "Sandnessjøen": {
+  "lat": 66.0215862,
+  "lon": 12.6316669,
+  "display": "Sandnessjøen, Alstahaug, Nordland, 8803, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Levang, Leirfjord": {
+  "lat": 66.1562077,
+  "lon": 13.0904129,
+  "display": "Levang, Indre Låvong, Leirfjord, Nordland, 8705, Norge",
+  "type": "locality",
+  "fixed": true
+ },
+ "Nesna": {
+  "lat": 66.1998916,
+  "lon": 13.0191454,
+  "display": "Nesna, Nordland, 8700, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Stokkvågen": {
+  "lat": 66.3381628,
+  "lon": 13.0138684,
+  "display": "Stokkvågen, Lurøy, Nordland, 8735, Norge",
+  "type": "hamlet",
+  "fixed": true
+ },
+ "Kilboghamn": {
+  "lat": 66.4878061,
+  "lon": 13.2254647,
+  "display": "Kilboghamn, Rødøy, Nordland, 8754, Norge",
+  "type": "village"
+ },
+ "Jektvik": {
+  "lat": 66.6258352,
+  "lon": 13.2918532,
+  "display": "Jektvik, Rødøy, Nordland, 8187, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Ågskardet": {
+  "lat": 66.7182775,
+  "lon": 13.4712301,
+  "display": "Ågskardet, Meløy, Nordland, 8184, Norge",
+  "type": "quarter",
+  "fixed": true
+ },
+ "Forøy, Meløy": {
+  "lat": 66.7395009,
+  "lon": 13.5071117,
+  "display": "Forøy, Meløy, Nordland, 8170, Norge",
+  "type": "hamlet",
+  "fixed": true
+ },
+ "Halsa, Meløy": {
+  "lat": 66.7437179,
+  "lon": 13.5771741,
+  "display": "Halsa kirke, Kirkeveien, Halsa, Meløy, Nordland, 8178, Norge",
+  "type": "place_of_worship",
+  "fixed": true
+ },
+ "Glomfjord": {
+  "lat": 66.8125864,
+  "lon": 13.9477864,
+  "display": "Glomfjordtunnelen, Glomfjord industripark, Glomfjord, Meløy, Nordland, 8160, Norge",
+  "type": "primary"
+ },
+ "Ørnes": {
+  "lat": 66.8730775,
+  "lon": 13.7060869,
+  "display": "Ørnes, Meløy, Nordland, 8150, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Saltstraumen": {
+  "lat": 67.2321407,
+  "lon": 14.6100504,
+  "display": "Saltstraumen, Saltstraumbrua, Ripnes, Saltstraumen - Stuorstrávve - Stuorrastrávve, Bodø, Nordland, 8056, Norge",
+  "type": "attraction",
+  "fixed": true
+ },
+ "Bodø": {
+  "lat": 67.288,
+  "lon": 14.396
+ },
+ "Moskenes": {
+  "lat": 67.9,
+  "lon": 13.0525
+ },
+ "Å i Lofoten": {
+  "lat": 67.8796157,
+  "lon": 12.9840442,
+  "display": "Å, Moskenes, Nordland, 8392, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Reine": {
+  "lat": 67.9324675,
+  "lon": 13.0887684,
+  "display": "Reine, Moskenes, Nordland, 8390, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Ramberg, Flakstad": {
+  "lat": 68.0899056,
+  "lon": 13.2298917,
+  "display": "Ramberg, Flakstad, Nordland, 8380, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Leknes": {
+  "lat": 68.1474646,
+  "lon": 13.6115311,
+  "display": "Leknes, Vestvågøy, Nordland, 8370, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Henningsvær": {
+  "lat": 68.152888,
+  "lon": 14.2007245,
+  "display": "Henningsvær, Vågan, Nordland, 8312, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Kabelvåg": {
+  "lat": 68.2101202,
+  "lon": 14.4773789,
+  "display": "Kabelvåg, Vågan, Nordland, 8310, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Svolvær": {
+  "lat": 68.2321709,
+  "lon": 14.5646019,
+  "display": "Svolvær, Vågan, Nordland, 8300, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Fiskebøl": {
+  "lat": 68.4291694,
+  "lon": 14.8197389,
+  "display": "Fiskebøl, Hadsel, Nordland, 8317, Norge",
+  "type": "quarter",
+  "fixed": true
+ },
+ "Melbu": {
+  "lat": 68.5012616,
+  "lon": 14.8009385,
+  "display": "Melbu, Hadsel, Nordland, 8445, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Stokmarknes": {
+  "lat": 68.5670003,
+  "lon": 14.9133484,
+  "display": "Stokmarknes, Hadsel, Nordland, 8450, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Sortland": {
+  "lat": 68.6951304,
+  "lon": 15.4148253,
+  "display": "Sortland, Nordland, 8400, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Risøyhamn": {
+  "lat": 68.9719105,
+  "lon": 15.6383507,
+  "display": "Risøyhamn, Andøy, Nordland, 8484, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Bleik": {
+  "lat": 69.2718776,
+  "lon": 15.958459,
+  "display": "Bleik, Andøy, Nordland, Norge",
+  "type": "residential",
+  "fixed": true
+ },
+ "Andenes": {
+  "lat": 69.3122989,
+  "lon": 16.1057085,
+  "display": "Andenes, Vestbyen, Merket, Andenes, Andøy, Nordland, Norge",
+  "type": "residential",
+  "fixed": true
+ },
+ "Gryllefjord": {
+  "lat": 69.3626961,
+  "lon": 17.0550418,
+  "display": "Gryllefjorden, Senja, Troms, 9380, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Bergsbotn": {
+  "lat": 69.4396444,
+  "lon": 17.467572,
+  "display": "Bergsbotn, Senja, Troms, Norge",
+  "type": "hamlet",
+  "fixed": true
+ },
+ "Ersfjord, Senja": {
+  "lat": 69.4833418,
+  "lon": 17.4058023,
+  "display": "Ersfjorden, Senja, Troms, 9386, Norge",
+  "type": "hamlet",
+  "fixed": true
+ },
+ "Mefjordvær": {
+  "lat": 69.5186431,
+  "lon": 17.438209,
+  "display": "Mefjordvær, Senja, Troms, 9386, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Husøy, Senja": {
+  "lat": 69.5441983,
+  "lon": 17.6636993,
+  "display": "Husøy, Senja, Troms, 9389, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Botnhamn": {
+  "lat": 69.5082193,
+  "lon": 17.9028281,
+  "display": "Botnhamn, Senja, Troms, 9373, Norge",
+  "type": "village"
+ },
+ "Brensholmen": {
+  "lat": 69.5903593,
+  "lon": 18.0160868,
+  "display": "Brensholmen, Austein, Tromsø, Troms, Norge",
+  "type": "islet",
+  "fixed": true
+ },
+ "Kvaløysletta": {
+  "lat": 69.6901726,
+  "lon": 18.8619905,
+  "display": "Kvaløysletta, Tromsø, Troms, 9101, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Tromsø": {
+  "lat": 69.6516345,
+  "lon": 18.9558585,
+  "display": "Tromsø, Troms, Norge",
+  "type": "administrative"
+ },
+ "Breivikeidet": {
+  "lat": 69.6561278,
+  "lon": 19.5675528,
+  "display": "Breivikeidet - Guohcavuopmi, Tromsø, Troms, Norge",
+  "type": "hamlet",
+  "fixed": true
+ },
+ "Svensby": {
+  "lat": 69.6690882,
+  "lon": 19.8048465,
+  "display": "Svensby - Bávttit, Lyngen, Troms, Norge",
+  "type": "hamlet",
+  "fixed": true
+ },
+ "Lyngseidet": {
+  "lat": 69.5762575,
+  "lon": 20.2190704,
+  "display": "Lyngseidet, Lyngen, Troms, 9060, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Olderdalen": {
+  "lat": 69.6030929,
+  "lon": 20.537129,
+  "display": "Dálusvággi - Olderdalen - Talosvankka, Kåfjord, Troms, 9146, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Storslett": {
+  "lat": 69.7678521,
+  "lon": 21.0244567,
+  "display": "Storslett, Nordreisa, Troms, 9151, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Burfjord": {
+  "lat": 69.9378704,
+  "lon": 22.0518668,
+  "display": "Burfjord, Kvænangen, Troms, 9161, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Talvik": {
+  "lat": 70.0424667,
+  "lon": 22.950196,
+  "display": "Talvik, Alta, Finnmark, 9540, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Alta": {
+  "lat": 69.9666046,
+  "lon": 23.2733282,
+  "display": "Alta, Finnmark, Norge",
+  "type": "administrative"
+ },
+ "Skaidi": {
+  "lat": 70.4324024,
+  "lon": 24.5023523,
+  "display": "Skaidi, Hammerfest, Finnmark, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Olderfjord": {
+  "lat": 70.4739478,
+  "lon": 25.0705774,
+  "display": "Leaibevuotna - Olderfjord - Leipovuono, Porsanger, Finnmark, 9713, Norge",
+  "type": "village",
+  "fixed": true
+ },
+ "Repvåg": {
+  "lat": 70.7470232,
+  "lon": 25.6731918,
+  "display": "Repvåg - Reiffváhki, Nordkapp, Finnmark, Norge",
+  "type": "hamlet",
+  "fixed": true
+ },
+ "Honningsvåg": {
+  "lat": 70.9802638,
+  "lon": 25.977841,
+  "display": "Honningsvåg, Nordkapp, Finnmark, 9750, Norge",
+  "type": "town",
+  "fixed": true
+ },
+ "Skarsvåg": {
+  "lat": 71.1127655,
+  "lon": 25.8252042,
+  "display": "Skarsvåg, Nordkapp, Finnmark, 9763, Norge",
+  "type": "village"
+ },
+ "Nordkapp": {
+  "lat": 71.1699506,
+  "lon": 25.7858893,
+  "display": "Nordkapp, Finnmark, Norge",
+  "type": "cape",
+  "fixed": true
+ },
+ "Fodnes ferjekai": {
+  "lat": 61.148701,
+  "lon": 7.384298
+ },
+ "Lund ferjekai": {
+  "lat": 64.768257,
+  "lon": 11.622629
+ },
+ "Skjolden, Luster": {
+  "lat": 61.490921,
+  "lon": 7.599912
+ },
+ "Støren, Midtre Gauldal": {
+  "lat": 63.035351,
+  "lon": 10.290395
+ },
+ "Haukeliseter fjellstue": {
+  "lat": 59.823855,
+  "lon": 7.194138
+ },
+ "Otta, Sel": {
+  "lat": 61.771244,
+  "lon": 9.535254
+ },
+ "Stegastein": {
+  "lat": 60.908634,
+  "lon": 7.211773
+ },
+ "Flotane, Aurland": {
+  "lat": 61.00757,
+  "lon": 7.331181
+ },
+ "Kilboghamn ferjekai": {
+  "lat": 66.489158,
+  "lon": 13.227665
+ },
+ "Botnhamn ferjekai": {
+  "lat": 69.506876,
+  "lon": 17.907827
+ },
+ "Dyranut": {
+  "lat": 60.3722,
+  "lon": 7.512
+ },
+ "Halne fjellstugu": {
+  "lat": 60.4184008,
+  "lon": 7.6857422,
+  "display": "Halne Fjellstova, Hardangervidda, Eidfjord, Vestland, Norge",
+  "fixed": true
+ },
+ "Årdalstangen": {
+  "lat": 61.236136,
+  "lon": 7.7025037,
+  "display": "Årdalstangen, Årdal, Vestland, 6885, Norge",
+  "fixed": true
+ },
+ "Øvre Årdal": {
+  "lat": 61.3088198,
+  "lon": 7.8027747,
+  "display": "Øvre Årdal, Årdal, Vestland, 6884, Norge",
+  "fixed": true
+ },
+ "Borgund stavkyrkje": {
+  "lat": 61.0472015,
+  "lon": 7.8122905,
+  "display": "Borgund stavkyrkje, Vindhella, Tråo, Borgund, Lærdal, Vestland, Norge",
+  "fixed": true
+ },
+ "Tyinkrysset": {
+  "lat": 61.2034921,
+  "lon": 8.2372432,
+  "display": "Tyinkrysset, Vang, Innlandet, 2985, Norge",
+  "fixed": true
+ },
+ "Fagerheim fjellstugu": {
+  "lat": 60.4396414,
+  "lon": 7.7852005,
+  "display": "Fagerheim Fjellstugu, Krækkja, Hol, Buskerud, Norge",
+  "fixed": true
+ },
+ "Maristova": {
+  "lat": 61.1109597,
+  "lon": 8.0352321,
+  "display": "Maristova, Lærdal, Vestland, 6888, Norge",
+  "fixed": true
+ },
+ "Haugastøl stasjon": {
+  "lat": 60.5112844,
+  "lon": 7.8701441,
+  "display": "Haugastøl, Dansarfeten, Haugastøl, Hol, 3595, Norge",
+  "fixed": true
+ },
+ "Tyin, Vang": {
+  "lat": 61.2935851,
+  "lon": 8.2090656,
+  "display": "Tyin, Vang, Innlandet, Norge",
+  "fixed": true
+ }
+}

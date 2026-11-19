@@ -1,0 +1,7 @@
+.DS_Store
+tools/huts.json
+tools/ovp.json
+tools/segcache.json
+tools/segcache2.json
+tools/route.log
+tools/__pycache__/
