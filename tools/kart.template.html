@@ -137,7 +137,7 @@ function render(){
     const toggle=show=>{btn.setAttribute('aria-expanded',show);panel.hidden=!show};
     btn.onclick=()=>{const was=btn.getAttribute('aria-expanded')==='true';
       if(open&&open!==toggle)open(false);toggle(!was);open=was?null:toggle;map.closePopup();
-      map.fitBounds(was?all.getBounds():bounds(),{padding:[30,30]})};
+      if(!was)map.fitBounds(bounds(),{padding:[30,30]})};
     g.on('click',()=>{if(btn.getAttribute('aria-expanded')!=='true')btn.click();btn.scrollIntoView({block:'start',behavior:'smooth'})});
     list.appendChild(btn);list.appendChild(panel)});
   // alternatives that are switched off: faint dashed line, click to switch on
@@ -156,9 +156,7 @@ function render(){
 }
 function setVariant(id,on){const v=D.variants.find(v=>v.id===id);
   if(on){D.variants.forEach(o=>{if(o!==v&&active.has(o.id)&&overlaps(o,v))active.delete(o.id)});active.add(id)}else active.delete(id);
-  render();
-  const b=L.latLngBounds([]);(on?v.stages:D.main.slice(v.first-1,v.last)).forEach(s=>eff(s,gravel).segs.forEach(x=>b.extend(x.c)));
-  map.fitBounds(b,{padding:[40,40]})}
+  render();}
 D.variants.forEach(v=>{const b=document.createElement('button');b.type='button';b.className='vb';b.dataset.id=v.id;b.setAttribute('aria-pressed','false');
   const repl=v.first===v.last?`stage ${v.first}`:`stages ${v.first}–${v.last}`;
   b.innerHTML=`<span class="sw"></span><span><span class="vt">${esc(v.title)}</span><span class="vd"></span><span class="vx">${esc(v.blurb)}</span></span>`;
