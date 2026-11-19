@@ -4,7 +4,8 @@ from stages import STAGES, FERRIES
 geo=json.load(open(os.path.join(HERE,'geocache.json')))
 cache_p=os.path.join(HERE,'segcache2.json')
 segc=json.load(open(cache_p)) if os.path.exists(cache_p) else {}
-ferry=set(FERRIES)
+from variants import VARIANTS, V_FERRIES
+ferry=set(FERRIES)|set(V_FERRIES)
 def hav(a,b):
     R=6371000; la1,lo1,la2,lo2=map(math.radians,(a[1],a[0],b[1],b[0]))
     h=math.sin((la2-la1)/2)**2+math.cos(la1)*math.cos(la2)*math.sin((lo2-lo1)/2)**2
@@ -52,30 +53,41 @@ def brouter(a,b,prof="trekking"):
         else: break
     if r["ok"]: segc[key]=r; json.dump(segc,open(cache_p,"w"))
     time.sleep(1.5); return r
-out=[]; prev=None
-for name,pts in STAGES:
-    chain=([prev] if prev and prev!=pts[0] else [])+pts
-    if prev and (prev,pts[0]) in ferry: chain=pts
-    st={"name":name,"points":chain,"segs":[],"km":0,"asc":0,"asc_br":0,"ferries":[],"unpaved_km":0,"path_km":0,"tunnels":[]}
-    for a,b in zip(chain,chain[1:]):
-        prof="fastbike" if b.startswith("fast:") else "trekking"
-        a=a.replace("fast:",""); b=b.replace("fast:","")
-        if (a,b) in ferry:
-            A,B=geo[a],geo[b]
-            st["segs"].append({"ferry":True,"coords":[[A['lon'],A['lat']],[B['lon'],B['lat']]]}); st["ferries"].append(f"{a} – {b}"); continue
-        r=brouter(a,b,prof)
-        if not r["ok"]: print("FAIL",name,":",a,"->",b,r["err"]); continue
-        d=hav((geo[a]['lon'],geo[a]['lat']),(geo[b]['lon'],geo[b]['lat']))
-        ride=(r["len"]-r["ferry_m"])/1000; asc=ascent(r["coords"])
-        notes=[]
-        if r["len"]>1.7*d+4000: notes.append("DETOUR?")
-        if r["ferry_m"]: notes.append(f"router-ferry {r['ferry_m']/1000:.1f}km"); st["ferries"].append(f"(on route between {a} and {b}, {r['ferry_m']/1000:.1f} km)")
-        if r["path_m"]>500: notes.append(f"PATH {r['path_m']/1000:.1f}km")
-        print(f"   {a} -> {b}: {ride:.1f} km, +{asc:.0f} m (brouter +{r['asc_br']:.0f}; straight {d/1000:.0f}) unpaved {r['unpaved_m']/1000:.1f} {' '.join(notes)}")
-        for t in r["tunnels"]: print(f"        tunnel {t['m']} m at {t['lat']:.4f},{t['lon']:.4f} ({t['hw']})")
-        st["segs"].append({"ferry":False,"coords":r["coords"]}); st["km"]+=ride; st["asc"]+=asc; st["asc_br"]+=r["asc_br"]
-        st["unpaved_km"]+=r["unpaved_m"]/1000; st["path_km"]+=r["path_m"]/1000; st["tunnels"]+=r["tunnels"]
-    print(f"{len(out)+1:2d}. {name}: {st['km']:.0f} km, +{st['asc']:.0f} m (br {st['asc_br']:.0f}), unpaved {st['unpaved_km']:.0f} km, ferries: {st['ferries']}")
-    st['points']=[p.replace('fast:','') for p in chain]; out.append(st); prev=pts[-1].replace('fast:','')
-json.dump(out,open(os.path.join(HERE,'routed.json'),"w"))
-print("TOTAL km",round(sum(s["km"] for s in out)),"asc",round(sum(s["asc"] for s in out)),"unpaved",round(sum(s["unpaved_km"] for s in out)))
+def route_stages(STAGES,prev=None):
+    out=[]
+    for name,pts in STAGES:
+        chain=([prev] if prev and prev!=pts[0] else [])+pts
+        st={"name":name,"points":chain,"segs":[],"km":0,"asc":0,"asc_br":0,"ferries":[],"unpaved_km":0,"path_km":0,"tunnels":[]}
+        for a,b in zip(chain,chain[1:]):
+            prof="fastbike" if b.startswith("fast:") else "trekking"
+            a=a.replace("fast:",""); b=b.replace("fast:","")
+            if (a,b) in ferry:
+                A,B=geo[a],geo[b]
+                st["segs"].append({"ferry":True,"coords":[[A['lon'],A['lat']],[B['lon'],B['lat']]]}); st["ferries"].append(f"{a} – {b}"); continue
+            r=brouter(a,b,prof)
+            if not r["ok"]: print("FAIL",name,":",a,"->",b,r["err"]); continue
+            d=hav((geo[a]['lon'],geo[a]['lat']),(geo[b]['lon'],geo[b]['lat']))
+            ride=(r["len"]-r["ferry_m"])/1000; asc=ascent(r["coords"])
+            notes=[]
+            if r["len"]>1.7*d+4000: notes.append("DETOUR?")
+            if r["ferry_m"]: notes.append(f"router-ferry {r['ferry_m']/1000:.1f}km"); st["ferries"].append(f"(on route between {a} and {b}, {r['ferry_m']/1000:.1f} km)")
+            if r["path_m"]>500: notes.append(f"PATH {r['path_m']/1000:.1f}km")
+            print(f"   {a} -> {b}: {ride:.1f} km, +{asc:.0f} m (brouter +{r['asc_br']:.0f}; straight {d/1000:.0f}) unpaved {r['unpaved_m']/1000:.1f} {' '.join(notes)}")
+            for t in r["tunnels"]: print(f"        tunnel {t['m']} m at {t['lat']:.4f},{t['lon']:.4f} ({t['hw']})")
+            st["segs"].append({"ferry":False,"coords":r["coords"]}); st["km"]+=ride; st["asc"]+=asc; st["asc_br"]+=r["asc_br"]
+            st["unpaved_km"]+=r["unpaved_m"]/1000; st["path_km"]+=r["path_m"]/1000; st["tunnels"]+=r["tunnels"]
+        print(f"{len(out)+1:2d}. {name}: {st['km']:.0f} km, +{st['asc']:.0f} m (br {st['asc_br']:.0f}), unpaved {st['unpaved_km']:.0f} km, ferries: {st['ferries']}")
+        st['points']=[p.replace('fast:','') for p in chain]; out.append(st); prev=pts[-1].replace('fast:','')
+    return out
+if __name__=="__main__":
+    if "variants" in sys.argv:
+        res={}
+        for v in VARIANTS:
+            print("=== VARIANT",v["id"],flush=True)
+            res[v["id"]]=route_stages(v["stages"],v["start"])
+            print("   variant total",round(sum(s["km"] for s in res[v["id"]])),"km",round(sum(s["asc"] for s in res[v["id"]])),"m",flush=True)
+        json.dump(res,open(os.path.join(HERE,'routed_variants.json'),"w"))
+    else:
+        out=route_stages(STAGES)
+        json.dump(out,open(os.path.join(HERE,'routed.json'),"w"))
+        print("TOTAL km",round(sum(s["km"] for s in out)),"asc",round(sum(s["asc"] for s in out)),"unpaved",round(sum(s["unpaved_km"] for s in out)))

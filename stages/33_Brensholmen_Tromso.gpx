@@ -3,6 +3,10 @@
 <metadata><name>Brensholmen – Tromsø</name></metadata>
 <trk><name>33 Brensholmen – Tromsø</name>
 <trkseg>
+<trkpt lat="69.50688" lon="17.90783"></trkpt>
+<trkpt lat="69.59036" lon="18.01609"></trkpt>
+</trkseg>
+<trkseg>
 <trkpt lat="69.59051" lon="18.01682"><ele>13</ele></trkpt>
 <trkpt lat="69.59043" lon="18.01694"><ele>10</ele></trkpt>
 <trkpt lat="69.59028" lon="18.01695"><ele>8</ele></trkpt>

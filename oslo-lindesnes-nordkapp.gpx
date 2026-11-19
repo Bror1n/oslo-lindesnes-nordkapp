@@ -85331,6 +85331,10 @@
 </trk>
 <trk><name>28 Moskenes – Leknes (Lofoten)</name>
 <trkseg>
+<trkpt lat="67.28800" lon="14.39600"></trkpt>
+<trkpt lat="67.90000" lon="13.05250"></trkpt>
+</trkseg>
+<trkseg>
 <trkpt lat="67.89995" lon="13.05253"><ele>16</ele></trkpt>
 <trkpt lat="67.89999" lon="13.05288"><ele>16</ele></trkpt>
 <trkpt lat="67.90005" lon="13.05307"><ele>16</ele></trkpt>
@@ -96556,6 +96560,10 @@
 </trk>
 <trk><name>32 Gryllefjord – Botnhamn (Senja)</name>
 <trkseg>
+<trkpt lat="69.31230" lon="16.10571"></trkpt>
+<trkpt lat="69.36270" lon="17.05504"></trkpt>
+</trkseg>
+<trkseg>
 <trkpt lat="69.36274" lon="17.05508"><ele>4</ele></trkpt>
 <trkpt lat="69.36272" lon="17.05537"><ele>4</ele></trkpt>
 <trkpt lat="69.36253" lon="17.05681"><ele>3</ele></trkpt>
@@ -98498,6 +98506,10 @@
 </trkseg>
 </trk>
 <trk><name>33 Brensholmen – Tromsø</name>
+<trkseg>
+<trkpt lat="69.50688" lon="17.90783"></trkpt>
+<trkpt lat="69.59036" lon="18.01609"></trkpt>
+</trkseg>
 <trkseg>
 <trkpt lat="69.59051" lon="18.01682"><ele>13</ele></trkpt>
 <trkpt lat="69.59043" lon="18.01694"><ele>10</ele></trkpt>

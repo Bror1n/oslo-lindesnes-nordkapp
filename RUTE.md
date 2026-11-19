@@ -8,6 +8,7 @@ Files in this folder:
 - [kart.html](kart.html): interactive map, click a stage to zoom.
 - [oslo-lindesnes-nordkapp.gpx](oslo-lindesnes-nordkapp.gpx): the whole route, one track per stage.
 - [stages/](stages/): one GPX per stage for the bike computer.
+- [variants/](variants/): one GPX per alternative route, see Alternative routes below.
 - [tools/](tools/): the scripts and waypoint list that made the route (`stages.py` is the editable stage list).
 
 The track was routed with BRouter on OpenStreetMap data, so it respects the bicycle bans that are mapped. Distances exclude ferries. Climbing is smoothed and reads slightly low. "Gravel km" counts roads tagged as unpaved.
@@ -66,6 +67,208 @@ The track was routed with BRouter on OpenStreetMap data, so it respects the bicy
 Suggested rest days: Lindesnes (stage 5 is a half day anyway), Flåm or Lom, Trondheim, Lofoten, Tromsø.
 
 The stages average 92 km. Riding 110–120 km a day instead brings the trip down to about 32 riding days. The natural short stages to absorb are 5, 9, 13, 26 and 33.
+
+<!-- VARIANTS:START -->
+## Alternative routes
+
+Four variants can replace part of the main route. Switch them on in [kart.html](kart.html) to see the line and the new totals. Each has its own GPX in [variants/](variants/).
+
+| Variant | Replaces stages | Distance | Climbing | Days |
+|---|---|--:|--:|--:|
+| Lysefjord and the North Sea Road | 6–7 | +142 km | +3770 m | +2 |
+| Nigardsbreen and Jostedalen | 14–15 | ±0 km | −1120 m | ±0 |
+| Geiranger, Trollstigen and the Atlantic Road | 17–19 | +285 km | +2740 m | +3 |
+| Havøysund | 38 | +178 km | +1230 m | +2 |
+
+### Lysefjord and the North Sea Road
+
+West from Lindesnes along the North Sea coast and Jæren, the tourist ferry up Lysefjord, then Lysevegen and Suleskarvegen over to Setesdal.
+
+- The Lauvvik–Lysebotn tourist ferry runs in summer only, about 2.5 hours, and should be booked. Sleep in Lysebotn.
+- The first day is the hardest on the south coast: 121 km and 1,600 m of climbing.
+- Lysevegen and Suleskarvegen are closed in winter and normally open in late May.
+- Kjerag and Preikestolen each need most of a day on foot, so allow rest days for them.
+
+| Stage | km | Climb m | Gravel km | Ferries |
+|---|--:|--:|--:|--:|
+| Lindesnes fyr – Flekkefjord | 121 | 1610 | 16 |  |
+| Flekkefjord – Egersund (Jøssingfjord) | 68 | 1000 |  |  |
+| Egersund – Lauvvik (Jæren) | 93 | 430 | 12 |  |
+| Lysebotn – Valle (Lysevegen, Suleskarvegen) | 89 | 1930 |  | 1 |
+
+**Lindesnes fyr – Flekkefjord**
+
+- **Lyngdalsfjorden and Kvinesheia** (on the route). Fjord arms and forested ridges. The hilliest part of the south coast.
+- **Lista** (detour, +45 km). Flat, windswept peninsula with long sand beaches, a lighthouse and a major bird migration site.
+- **Fedafjorden** (on the route). Narrow fjord crossed high above the water before the drop to Flekkefjord.
+
+**Flekkefjord – Egersund (Jøssingfjord)**
+
+- **Brufjell potholes** (detour, 3 h hike from Roligheten near Åna-Sira). Giant potholes ground into a sea cliff by Ice Age waves. Chains on the last steep section.
+- **Jøssingfjord and Helleren** (on the route). Sheer-walled fjord where two old houses sit under a huge rock overhang.
+- **Magma Geopark coast** (on the route). Fv44 winds through bare, pale anorthosite hills, the same rock as the Moon's highlands.
+- **Eigerøy lighthouse** (detour, +16 km return and a 30 min walk). Cast-iron lighthouse on the open North Sea.
+
+**Egersund – Lauvvik (Jæren)**
+
+- **Jæren beaches** (on the route). Norway's flattest coast. Sand beaches, dunes and stone walls for 60 km.
+- **Orrestranda** (detour, +8 km return). The longest sand beach in Norway, 5 km of dunes.
+- **Preikestolen** (detour, ferry Lauvvik–Oanes, +44 km return and a 4 h hike). The flat rock platform 604 m straight above Lysefjord. Needs an extra day.
+- **Lysefjord by ferry** (on the route). The tourist ferry from Lauvvik runs the whole 42 km fjord between 1,000 m walls, under Preikestolen and Kjerag.
+- **Flørli 4444** (detour, ferry stop, 4–5 h). The world's longest wooden staircase, 4,444 steps up beside an old power station pipeline.
+
+**Lysebotn – Valle (Lysevegen, Suleskarvegen)**
+
+- **Lysevegen** (on the route). 27 hairpins and a spiral tunnel, 900 m up from the fjord. Opens when the snow is cleared, normally late May.
+- **Kjeragbolten** (detour, 5–6 h hike from Øygardstøl at the top of the hairpins). The boulder wedged in a crack 984 m above the fjord.
+- **Suleskarvegen** (on the route). Southern Norway's highest road crossing, 1,050 m, over bare rock and lakes to Setesdal.
+
+Backup cabins:
+
+| Stage | Cabin | Type | Off track km | Altitude m | Beds | DNT key | Run by |
+|---|---|---|--:|--:|--:|:-:|---|
+| Flekkefjord – Egersund (Jøssingfjord) | [Gården Li](https://ut.no/hytte/g%C3%A5rden-li) | No-service cabin | 3.8 |  | 36 | yes | Flekkefjord og Oplands Turistforening |
+| Egersund – Lauvvik (Jæren) | [Nodhagen](https://ut.no/hytte/nodhagen) | No-service cabin | 1.4 |  | 10 | yes | Stavanger Turistforening |
+| Egersund – Lauvvik (Jæren) | [Gramstad](https://ut.no/hytte/gramstad) | No-service cabin | 1.5 |  | 12 | yes |  |
+| Lysebotn – Valle (Lysevegen, Suleskarvegen) | [Øyuvsbu](https://ut.no/hytte/oeyuvsbu) | Self-service cabin | 0.8 |  | 40 | yes | DNT Sør |
+| Lysebotn – Valle (Lysevegen, Suleskarvegen) | [Børsteinen](https://ut.no/hytte/boersteinen) | No-service cabin | 0.8 | 870 | 12 |  | Stavanger Turistforening |
+| Lysebotn – Valle (Lysevegen, Suleskarvegen) | [Ådneram turisthytte](https://ut.no/hytte/aadneram-turisthytte) | No-service cabin | 0.8 | 580 | 56 | yes | Stavanger Turistforening |
+| Lysebotn – Valle (Lysevegen, Suleskarvegen) | [Håheller](https://ut.no/hytte/haaheller) | No-service cabin | 1.2 |  | 9 | yes | DNT Sør |
+| Lysebotn – Valle (Lysevegen, Suleskarvegen) | [Langavatn](https://ut.no/hytte/langavatn) | Self-service cabin | 4.7 | 940 | 28 |  | Stavanger Turistforening |
+| Lysebotn – Valle (Lysevegen, Suleskarvegen) | [Langavatn](https://ut.no/hytte/langavatn) | Self-service cabin | 4.7 | 940 | 28 |  | Stavanger Turistforening |
+
+### Nigardsbreen and Jostedalen
+
+Bus from Lærdal to Sogndal instead of Filefjell and Tindevegen, then up Jostedalen to the glacier and back to Sognefjellsvegen.
+
+- This breaks the unbroken riding line: the bus from Lærdal to Sogndal goes through tunnels that are closed to bikes. Check that the bus takes bikes.
+- You lose the Filefjell King's Road and Tindevegen.
+
+| Stage | km | Climb m | Gravel km | Ferries |
+|---|--:|--:|--:|--:|
+| Sogndal – Nigardsbreen (bus from Lærdal) | 66 | 670 | 5 | 1 |
+| Nigardsbreen – Turtagrø | 76 | 1020 | 3 |  |
+
+**Sogndal – Nigardsbreen (bus from Lærdal)**
+
+- **Urnes stave church** (detour, ferry Solvorn–Ornes, +10 km return). Norway's oldest stave church, UNESCO World Heritage, above Lustrafjorden.
+- **Lustrafjorden** (on the route). The green, glacier-fed innermost arm of Sognefjorden.
+- **Jostedalen** (on the route). Narrow valley beside a milky glacier river, with side glaciers showing above.
+- **Nigardsbreen** (on the route). An arm of Jostedalsbreen, mainland Europe's largest glacier. A short boat trip and walk reach the ice front. Guided walks go onto the blue ice.
+
+**Nigardsbreen – Turtagrø**
+
+- **Feigumfossen** (on the route). 218 m waterfall seen across Lustrafjorden from the road.
+- **Skjolden** (on the route). The innermost point of Sognefjorden, 205 km from the sea.
+- **Climb to Turtagrø** (on the route). 900 m up in 11 km, with the Hurrungane peaks opening ahead.
+
+Backup cabins:
+
+| Stage | Cabin | Type | Off track km | Altitude m | Beds | DNT key | Run by |
+|---|---|---|--:|--:|--:|:-:|---|
+| Sogndal – Nigardsbreen (bus from Lærdal) | [Vigdalstøl](https://ut.no/hytte/vigdalstoel) | Self-service cabin | 3.9 | 770 | 10 | yes | DNT Oslo og Omegn |
+| Sogndal – Nigardsbreen (bus from Lærdal) | [Navarsete](https://ut.no/hytte/navarsete) | Self-service cabin | 4.0 | 620 | 9 | yes | DNT Oslo og Omegn |
+| Sogndal – Nigardsbreen (bus from Lærdal) | [Fivla](https://ut.no/hytte/fivla) | No-service cabin | 4.4 | 972 | 24 | yes | Luster Turlag |
+| Nigardsbreen – Turtagrø | [Fuglesteg](https://ut.no/hytte/fuglesteg) | No-service cabin | 0.8 | 630 | 31 | yes | Luster Turlag |
+
+### Geiranger, Trollstigen and the Atlantic Road
+
+West from Lom to Geirangerfjord, over Ørnevegen and Trollstigen to Åndalsnes, out to the Atlantic Road, then the Nordmøre fjords and Surnadal to Trondheim.
+
+- You lose Dovrefjell, the musk oxen and Rondane.
+- Between Pollfoss and Grotli the track uses the old gravel road beside Rv15. Not verified on the ground.
+- The direct road from Åndalsnes to Molde has a subsea tunnel closed to bikes, so the track goes along the south shore to the Vestnes–Molde ferry.
+- The Atlantic Road is ridden out to Kårvåg and back, because the tunnel onward to Kristiansund is closed to bikes.
+- Trollstigen and the Geiranger road are closed in winter and normally open in late May or June.
+
+| Stage | km | Climb m | Gravel km | Ferries |
+|---|--:|--:|--:|--:|
+| Lom – Geiranger | 106 | 950 | 23 |  |
+| Geiranger – Åndalsnes (Trollstigen) | 85 | 1600 | 1 | 1 |
+| Åndalsnes – Bud | 105 | 810 | 4 | 1 |
+| Bud – Batnfjordsøra (Atlantic Road) | 94 | 300 |  |  |
+| Batnfjordsøra – Rindal | 117 | 1100 | 14 | 1 |
+| Rindal – Trondheim | 100 | 610 | 12 |  |
+
+**Lom – Geiranger**
+
+- **Ottadalen and Pollfoss** (on the route). Dry pine valley, one of the least rainy places in Norway, with rapids at Pollfoss.
+- **Grotli and Breiddalsvatnet** (on the route). Bare highland at 900 m. Snow lies by the lake well into July.
+- **Gamle Strynefjellsvegen** (detour, 27 km of gravel one way from Grotli). Hand-built mountain road from 1894 with stone guard posts, past summer ski slopes.
+- **Dalsnibba** (detour, +10 km return, 450 m climb, toll road). Viewpoint at 1,476 m straight down on Geirangerfjorden.
+- **Flydalsjuvet** (on the route). The classic postcard ledge above Geiranger, on the descent.
+
+**Geiranger – Åndalsnes (Trollstigen)**
+
+- **Geirangerfjorden by boat** (detour, sightseeing boat, 1.5 h). UNESCO World Heritage fjord. The boat passes the Seven Sisters and Suitor waterfalls.
+- **Ørnesvingen** (on the route). Top of the eleven Eagle Road hairpins, with the widest view of the fjord.
+- **Gudbrandsjuvet** (on the route). Walkways over a 25 m deep slot gorge in Valldalen.
+- **Trollstigen** (on the route). Eleven hairpins at 9 % past Stigfossen waterfall, under the peaks Kongen, Dronninga and Bispen. You ride it downhill.
+- **Trollveggen** (detour, +20 km return from Åndalsnes). Europe's tallest vertical rock face, 1,000 m of the 1,700 m wall is sheer.
+- **Rampestreken** (detour, 2–3 h hike from Åndalsnes). Steel ramp at 537 m above the town and Romsdalsfjorden.
+
+**Åndalsnes – Bud**
+
+- **Romsdalsfjorden** (on the route). The south shore of the fjord, then the Vestnes–Molde ferry with the Romsdal Alps behind.
+- **Varden, Molde** (detour, +8 km return, 400 m climb). The Molde panorama: 222 snow-capped peaks across the fjord.
+- **Bud and Hustadvika** (on the route). Fishing village on one of the most exposed stretches of the Norwegian coast.
+
+**Bud – Batnfjordsøra (Atlantic Road)**
+
+- **Hustadvika coast road** (on the route). National tourist route along low farmland and skerries facing open ocean.
+- **Atlanterhavsvegen** (on the route). Eight bridges hopping between islets. Storseisundet bridge is the famous curved one. Ridden out and back.
+- **Trollkyrkja** (detour, 3 h hike from Fv64). Marble caves with an underground waterfall. Bring a headlamp.
+
+**Batnfjordsøra – Rindal**
+
+- **Bergsøysundet floating bridge** (on the route). 900 m bridge resting on pontoons, part of the island-hopping road east.
+- **Halsafjorden** (on the route). Crossed on the Kanestraum–Halsa ferry, with the Trollheimen mountains inland.
+- **Surnadalen** (on the route). Broad farming valley along the salmon river Surna, under the Trollheimen range.
+
+**Rindal – Trondheim**
+
+- **Orkla valley** (on the route). Forest and farmland down to the fjord at Orkanger.
+- **Orkdalsfjorden** (on the route). Back at Trondheimsfjorden for the last 40 km into the city.
+
+Backup cabins:
+
+| Stage | Cabin | Type | Off track km | Altitude m | Beds | DNT key | Run by |
+|---|---|---|--:|--:|--:|:-:|---|
+| Åndalsnes – Bud | [Skorgedalsbu](https://ut.no/hytte/skorgedalsbu) | Self-service cabin | 4.0 |  | 15 |  | Molde og Romsdals Turistforening |
+| Åndalsnes – Bud | [Feskarbu](https://ut.no/hytte/feskarbu) | No-service cabin | 4.6 | 275 | 4 | yes | Molde og Romsdals Turistforening |
+| Batnfjordsøra – Rindal | [Sætersetra](https://ut.no/hytte/10800/stersetra) | Self-service cabin | 1.7 | 320 | 4 | yes | Kristiansund og Nordmøre Turistforening |
+| Batnfjordsøra – Rindal | [Hermannhytta](https://ut.no/hytte/10819/hermannhytta) | Self-service cabin | 2.1 | 420 | 12 | yes | Kristiansund og Nordmøre Turistforening |
+| Batnfjordsøra – Rindal | [Jutulbu](https://ut.no/hytte/jutulbu) | Self-service cabin | 2.3 | 400 | 19 | yes | Kristiansund og Nordmøre Turistforening |
+| Batnfjordsøra – Rindal | [Tverrlihytta](https://ut.no/hytte/tverrlihytta) | Self-service cabin | 4.5 | 560 | 12 | yes | Kristiansund og Nordmøre Turistforening |
+
+### Havøysund
+
+Out and back from Olderfjord on the national tourist route to the fishing village of Havøysund.
+
+- An out-and-back: the same 89 km road both ways, very exposed to wind.
+- Havøysund has a shop and rooms. There is almost nothing in between.
+
+| Stage | km | Climb m | Gravel km | Ferries |
+|---|--:|--:|--:|--:|
+| Skaidi – Havøysund | 112 | 840 |  |  |
+| Havøysund – Olderfjord | 89 | 580 |  |  |
+| Olderfjord – Repvåg | 48 | 170 |  |  |
+
+**Skaidi – Havøysund**
+
+- **Havøysund tourist route** (on the route). Bare rock, sea and sky. Shattered slate cliffs and almost no traffic.
+- **Selvika** (on the route). Concrete ramp winding down to a beach, one of the tourist route's art stops.
+- **Arctic View** (detour, +8 km return, 250 m climb). Hilltop above Havøysund with a view over the Barents Sea and the islands.
+
+**Havøysund – Olderfjord**
+
+- **The same coast southbound** (on the route). The road back, with Porsangerfjorden opening ahead.
+
+**Olderfjord – Repvåg**
+
+- **Porsangerfjorden** (on the route). The road hugs the shore under layered slate cliffs. Reindeer on the beach are common.
+
+<!-- VARIANTS:END -->
 
 <!-- LANDMARKS:START -->
 ## Landmarks and detours by stage
@@ -343,9 +546,8 @@ The cabins are almost all in the mountain section, stages 8 to 18. On the coast 
 | 15 | [Tyinstølen Turisthytte](https://ut.no/hytte/tyinstoelen) | Staffed lodge | 0.0 | 1100 | 40 |  |  |
 | 15 | [Fuglesteg](https://ut.no/hytte/fuglesteg) | No-service cabin | 2.1 | 630 | 31 | yes | Luster Turlag |
 | 15 | [Slettningsbu](https://www.ut.no/hytte/3.1980/) | Self-service cabin | 3.0 | 1315 | 14 | yes | DNT Oslo og Omegn |
-| 15 | [Gravdalen](https://ut.no/hytte/gravdalen) | No-service cabin | 5.0 | 840 | 12 | yes | Årdal Turlag |
-| 16 | [Krossbu Turiststasjon](https://krossbu.no/) | Staffed lodge | 0.0 | 1267 | 85 |  |  |
 | 16 | [Sognefjellshytta](https://www.sognefjellet.no/) | Staffed lodge | 0.0 | 1410 | 80 |  |  |
+| 16 | [Krossbu Turiststasjon](https://krossbu.no/) | Staffed lodge | 0.1 | 1267 | 85 |  |  |
 | 16 | [Jotunheimen fjellstue](https://ut.no/hytte/jotunheimen-fjellstue) | Staffed lodge | 0.4 | 1000 | 36 |  |  |
 | 16 | [Raubergstulen Turisthytte](https://ut.no/hytte/raubergstulen-turisthytte) | Staffed lodge | 1.8 | 1000 | 160 |  |  |
 | 16 | [Fannaråkhytta](https://ut.no/hytte/fannaraakhytta) | Staffed lodge | 3.3 | 2065 | 34 | yes | DNT Oslo og Omegn |
@@ -360,12 +562,13 @@ The cabins are almost all in the mountain section, stages 8 to 18. On the coast 
 | 18 | [Hageseter](http://ut.no/hytte/hageseter-%28gautaaseter%29) | Staffed lodge | 0.6 | 915 | 70 |  |  |
 | 18 | [Hevertjønna](https://ut.no/hytte/hevertjoenna) | No-service cabin | 4.8 | 930 |  | yes | Trondhjems Turistforening |
 | 21 | [Svarttjønnbua](https://ut.no/hytte/svarttjoennbua) | No-service cabin | 4.1 | 205 | 6 | yes | Nord-Trøndelag Turistforening |
-| 23 | Holandsbua | Cabin, type not recorded | 3.9 |  |  |  | DNT Sør-Helgeland |
+| 23 | Holandsbua | Cabin, type not recorded | 3.8 |  |  |  | DNT Sør-Helgeland |
 | 27 | [Gjælentunet](https://ut.no/hytte/gjaelentunet) | No-service cabin | 1.8 | 40 | 34 | yes | Bodø og Omegns Turistforening |
 | 27 | Tussvatnet | Cabin, type not recorded | 3.8 |  |  |  | Bodø og omegn turistforening |
 | 28 | [Munkebu](https://ut.no/hytte/munkebu) | No-service cabin | 3.0 | 410 | 15 | yes | Lofoten Turlag |
 | 28 | [Selfjordhytta](https://ut.no/hytte/10445/selfjordhytta) | No-service cabin | 4.0 | 30 | 9 | yes | Lofoten Turlag |
 | 36 | [Nordlysobservatoriet Halde](http://www.alta.museum.no/sider/tekst.asp?side=64&meny=BES%D8K%20OSS) | No-service cabin | 3.8 | 904 | 6 |  |  |
+
 <!-- LANDMARKS:END -->
 
 ## Things that decide the route

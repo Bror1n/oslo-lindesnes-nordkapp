@@ -3,6 +3,10 @@
 <metadata><name>Moskenes – Leknes (Lofoten)</name></metadata>
 <trk><name>28 Moskenes – Leknes (Lofoten)</name>
 <trkseg>
+<trkpt lat="67.28800" lon="14.39600"></trkpt>
+<trkpt lat="67.90000" lon="13.05250"></trkpt>
+</trkseg>
+<trkseg>
 <trkpt lat="67.89995" lon="13.05253"><ele>16</ele></trkpt>
 <trkpt lat="67.89999" lon="13.05288"><ele>16</ele></trkpt>
 <trkpt lat="67.90005" lon="13.05307"><ele>16</ele></trkpt>

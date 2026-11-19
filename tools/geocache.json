@@ -974,5 +974,259 @@
   "lon": 8.2090656,
   "display": "Tyin, Vang, Innlandet, Norge",
   "fixed": true
+ },
+ "Lyngdal": {
+  "lat": 58.1379878,
+  "lon": 7.0685965,
+  "display": "Lyngdal, Agder, 4580, Norge",
+  "fixed": true
+ },
+ "Feda": {
+  "lat": 58.2665247,
+  "lon": 6.8186187,
+  "display": "Feda, Kvinesdal, Agder, 4485, Norge",
+  "fixed": true
+ },
+ "Flekkefjord": {
+  "lat": 58.2972667,
+  "lon": 6.6604201,
+  "display": "Flekkefjord, Agder, 4400, Norge",
+  "fixed": true
+ },
+ "Åna-Sira": {
+  "lat": 58.2932925,
+  "lon": 6.4403711,
+  "display": "Åna-Sira, Sokndal, Rogaland, 4420, Norge",
+  "fixed": true
+ },
+ "Jøssingfjord": {
+  "lat": 58.3176056,
+  "lon": 6.3443502,
+  "display": "Jøssingfjord, Sokndal, Rogaland, 4380, Norge",
+  "fixed": true
+ },
+ "Hauge i Dalane": {
+  "lat": 58.3428898,
+  "lon": 6.2935846,
+  "display": "Hauge, Sokndal, Rogaland, 4380, Norge",
+  "fixed": true
+ },
+ "Egersund": {
+  "lat": 58.4515121,
+  "lon": 6.0007554,
+  "display": "Egersund, Eigersund, Rogaland, 4370, Norge",
+  "fixed": true
+ },
+ "Brusand": {
+  "lat": 58.5405388,
+  "lon": 5.7448455,
+  "display": "Brusand, Hå, Rogaland, 4363, Norge",
+  "fixed": true
+ },
+ "Varhaug": {
+  "lat": 58.6163359,
+  "lon": 5.6453333,
+  "display": "Varhaug, Hå, Rogaland, 4360, Norge",
+  "fixed": true
+ },
+ "Sandnes": {
+  "lat": 58.8519701,
+  "lon": 5.737547,
+  "display": "Sandnes, Rogaland, 4306, Norge",
+  "fixed": true
+ },
+ "Lauvvik ferjekai": {
+  "lat": 58.8942495,
+  "lon": 6.0555175,
+  "display": "Lauvvik ferjekai, 508, Lauvvika, Sandnes, Rogaland, Norge",
+  "fixed": true
+ },
+ "Lysebotn": {
+  "lat": 59.0551362,
+  "lon": 6.6467412,
+  "display": "Lysebotn, Sandnes, Rogaland, 4127, Norge",
+  "fixed": true
+ },
+ "Suleskard": {
+  "lat": 59.0167427,
+  "lon": 6.9533763,
+  "display": "Suleskard, Ådneram, Sirdal, Agder, Norge",
+  "fixed": true
+ },
+ "Breheimsenteret": {
+  "lat": 61.6513332,
+  "lon": 7.2754076,
+  "display": "Breheimsenteret, Brevegen, Luster, Vestland, 6871, Norge",
+  "fixed": true
+ },
+ "Grotli": {
+  "lat": 62.0136621,
+  "lon": 7.6303909,
+  "display": "Grotli, Skjåk, Innlandet, 2695, Norge",
+  "fixed": true
+ },
+ "Geiranger": {
+  "lat": 62.1006277,
+  "lon": 7.2058959,
+  "display": "Geiranger, Stranda, Møre og Romsdal, 6216, Norge",
+  "fixed": true
+ },
+ "Eidsdal": {
+  "lat": 62.2624608,
+  "lon": 7.1718041,
+  "display": "Eidsdal, Fjord, Møre og Romsdal, 6215, Norge",
+  "fixed": true
+ },
+ "Linge ferjekai": {
+  "lat": 62.28457,
+  "lon": 7.187513,
+  "display": "Linge ferjekai, Lingestranda, Fjord, Møre og Romsdal, 6214, Norge",
+  "fixed": true
+ },
+ "Valldal": {
+  "lat": 62.2980545,
+  "lon": 7.2623851,
+  "display": "Valldal, Fjord, Møre og Romsdal, 6210, Norge",
+  "fixed": true
+ },
+ "Trollstigen": {
+  "lat": 62.456,
+  "lon": 7.666
+ },
+ "Åndalsnes": {
+  "lat": 62.5681692,
+  "lon": 7.6867621,
+  "display": "Åndalsnes, Rauma, Møre og Romsdal, 6310, Norge",
+  "fixed": true
+ },
+ "Åfarnes": {
+  "lat": 62.6608262,
+  "lon": 7.5016448,
+  "display": "Åfarnes, Rauma, Møre og Romsdal, 6360, Norge",
+  "fixed": true
+ },
+ "Sølsnes": {
+  "lat": 62.6854681,
+  "lon": 7.4571024,
+  "display": "Sølsnes, Nesjestranda, Molde, Møre og Romsdal, 6456, Norge",
+  "fixed": true
+ },
+ "Molde": {
+  "lat": 62.7377152,
+  "lon": 7.1590014,
+  "display": "Molde, Møre og Romsdal, 6413, Norge",
+  "fixed": true
+ },
+ "Bud": {
+  "lat": 62.9072555,
+  "lon": 6.9140743,
+  "display": "Bud, Hustadvika, Møre og Romsdal, 6430, Norge",
+  "fixed": true
+ },
+ "Vevang": {
+  "lat": 63.0048974,
+  "lon": 7.2956551,
+  "display": "Vevang, Groravika, Hustadvika, Møre og Romsdal, 6494, Norge",
+  "fixed": true
+ },
+ "Kårvåg": {
+  "lat": 63.0137169,
+  "lon": 7.4448732,
+  "display": "Kårvåg, Averøy, Møre og Romsdal, 6532, Norge",
+  "fixed": true
+ },
+ "Eide, Hustadvika": {
+  "lat": 62.9166682,
+  "lon": 7.4481068,
+  "display": "Eide, Hustadvika, Møre og Romsdal, 6490, Norge",
+  "fixed": true
+ },
+ "Batnfjordsøra": {
+  "lat": 62.8933784,
+  "lon": 7.679776,
+  "display": "Batnfjordsøra, Gjemnes, Møre og Romsdal, 6631, Norge",
+  "fixed": true
+ },
+ "Kanestraum": {
+  "lat": 63.0521344,
+  "lon": 8.1142731,
+  "display": "Kanestraum, Tingvoll, Møre og Romsdal, 6674, Norge",
+  "fixed": true
+ },
+ "Halsa ferjekai": {
+  "lat": 63.068358,
+  "lon": 8.228569,
+  "display": "Halsa ferjekai, Landvegen, Halsanaustan, Heim, Trøndelag, 6680, Norge",
+  "fixed": true
+ },
+ "Vinjeøra": {
+  "lat": 63.2061652,
+  "lon": 8.9859773,
+  "display": "Vinjeøra, Heim, Trøndelag, Norge",
+  "fixed": true
+ },
+ "Orkanger": {
+  "lat": 63.304819,
+  "lon": 9.8496676,
+  "display": "Orkanger, Orkland, Trøndelag, 7300, Norge",
+  "fixed": true
+ },
+ "Havøysund": {
+  "lat": 70.9963105,
+  "lon": 24.6609576,
+  "display": "Havøysund - Ávanuorri, Måsøy, Finnmark, 9690, Norge",
+  "fixed": true
+ },
+ "Bryne": {
+  "lat": 58.735,
+  "lon": 5.648
+ },
+ "Vestnes ferjekai": {
+  "lat": 62.6524602,
+  "lon": 7.0840309,
+  "display": "Vestnes ferjekai, E 39, Furneset, Vestnes, Møre og Romsdal, 6390, Norge",
+  "fixed": true
+ },
+ "Molde ferjekai": {
+  "lat": 62.7370642,
+  "lon": 7.1675138,
+  "display": "Molde ferjekai, 6240, Granlia, Røysan, Molde, Møre og Romsdal, 6413, Norge",
+  "fixed": true
+ },
+ "Surnadalsøra": {
+  "lat": 62.9701424,
+  "lon": 8.6601507,
+  "display": "Surnadalsøra, Surnadal, Møre og Romsdal, 6652, Norge",
+  "fixed": true
+ },
+ "Rindal": {
+  "lat": 63.0551356,
+  "lon": 9.2119292,
+  "display": "Rindal, Trøndelag, 6657, Norge",
+  "fixed": true
+ },
+ "Betna": {
+  "lat": 63.0875607,
+  "lon": 8.3506969,
+  "display": "Betna, Heim, Trøndelag, 6683, Norge",
+  "fixed": true
+ },
+ "Hjelset": {
+  "lat": 62.7814324,
+  "lon": 7.4974714,
+  "display": "Hjelset, Molde, Møre og Romsdal, 6450, Norge",
+  "fixed": true
+ },
+ "Bismo": {
+  "lat": 61.8843655,
+  "lon": 8.2664114,
+  "display": "Bismo, Skjåk, Innlandet, 2690, Norge",
+  "fixed": true
+ },
+ "Pollfoss": {
+  "lat": 61.9615035,
+  "lon": 7.8956364,
+  "display": "Pollfossen, Skjåk, Innlandet, 2693, Norge",
+  "fixed": true
  }
 }

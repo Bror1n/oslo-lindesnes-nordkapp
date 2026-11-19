@@ -3,6 +3,10 @@
 <metadata><name>Gryllefjord – Botnhamn (Senja)</name></metadata>
 <trk><name>32 Gryllefjord – Botnhamn (Senja)</name>
 <trkseg>
+<trkpt lat="69.31230" lon="16.10571"></trkpt>
+<trkpt lat="69.36270" lon="17.05504"></trkpt>
+</trkseg>
+<trkseg>
 <trkpt lat="69.36274" lon="17.05508"><ele>4</ele></trkpt>
 <trkpt lat="69.36272" lon="17.05537"><ele>4</ele></trkpt>
 <trkpt lat="69.36253" lon="17.05681"><ele>3</ele></trkpt>

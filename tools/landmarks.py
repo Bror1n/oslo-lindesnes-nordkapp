@@ -118,3 +118,71 @@ LANDMARKS={
    (D,"Kirkeporten, Skarsvåg","Kirkeporten",71.107,25.840,"+6 km return and a 30 min walk","Rock arch that frames the Nordkapp horn."),
    (D,"Gjesværstappan","Gjesværstappan",71.130,25.350,"+42 km return to Gjesvær and a boat trip","Bird cliffs with hundreds of thousands of puffins, gannets and sea eagles.")],
 }
+
+# Landmarks for variant stages, keyed by stage name. Same tuple format.
+VLANDMARKS={
+"Lindesnes fyr – Flekkefjord":[
+   (R,"Lyngdalsfjorden and Kvinesheia",None,58.138,7.069,"","Fjord arms and forested ridges. The hilliest part of the south coast."),
+   (D,"Lista","Lista fyr",58.109,6.568,"+45 km","Flat, windswept peninsula with long sand beaches, a lighthouse and a major bird migration site."),
+   (R,"Fedafjorden",None,58.266,6.819,"","Narrow fjord crossed high above the water before the drop to Flekkefjord.")],
+"Flekkefjord – Egersund (Jøssingfjord)":[
+   (D,"Brufjell potholes","Brufjellhålene",58.270,6.400,"3 h hike from Roligheten near Åna-Sira","Giant potholes ground into a sea cliff by Ice Age waves. Chains on the last steep section."),
+   (R,"Jøssingfjord and Helleren","Helleren",58.318,6.344,"","Sheer-walled fjord where two old houses sit under a huge rock overhang."),
+   (R,"Magma Geopark coast",None,58.343,6.294,"","Fv44 winds through bare, pale anorthosite hills, the same rock as the Moon's highlands."),
+   (D,"Eigerøy lighthouse","Eigerøy fyr",58.433,5.868,"+16 km return and a 30 min walk","Cast-iron lighthouse on the open North Sea.")],
+"Egersund – Lauvvik (Jæren)":[
+   (R,"Jæren beaches",None,58.540,5.745,"","Norway's flattest coast. Sand beaches, dunes and stone walls for 60 km."),
+   (D,"Orrestranda","Orrestranda",58.740,5.520,"+8 km return","The longest sand beach in Norway, 5 km of dunes."),
+   (D,"Preikestolen","Preikestolen",58.986,6.190,"Ferry Lauvvik–Oanes, +44 km return and a 4 h hike","The flat rock platform 604 m straight above Lysefjord. Needs an extra day."),
+   (R,"Lysefjord by ferry",None,58.990,6.300,"","The tourist ferry from Lauvvik runs the whole 42 km fjord between 1,000 m walls, under Preikestolen and Kjerag."),
+   (D,"Flørli 4444","Flørli",59.014,6.430,"Ferry stop, 4–5 h","The world's longest wooden staircase, 4,444 steps up beside an old power station pipeline.")],
+"Lysebotn – Valle (Lysevegen, Suleskarvegen)":[
+   (R,"Lysevegen",None,59.050,6.660,"","27 hairpins and a spiral tunnel, 900 m up from the fjord. Opens when the snow is cleared, normally late May."),
+   (D,"Kjeragbolten","Kjeragbolten",59.034,6.577,"5–6 h hike from Øygardstøl at the top of the hairpins","The boulder wedged in a crack 984 m above the fjord."),
+   (R,"Suleskarvegen",None,59.020,7.150,"","Southern Norway's highest road crossing, 1,050 m, over bare rock and lakes to Setesdal.")],
+"Sogndal – Nigardsbreen (bus from Lærdal)":[
+   (D,"Urnes stave church","Urnes stavkyrkje",61.298,7.322,"Ferry Solvorn–Ornes, +10 km return","Norway's oldest stave church, UNESCO World Heritage, above Lustrafjorden."),
+   (R,"Lustrafjorden",None,61.350,7.250,"","The green, glacier-fed innermost arm of Sognefjorden."),
+   (R,"Jostedalen",None,61.550,7.280,"","Narrow valley beside a milky glacier river, with side glaciers showing above."),
+   (R,"Nigardsbreen","Nigardsbreen",61.686,7.196,"","An arm of Jostedalsbreen, mainland Europe's largest glacier. A short boat trip and walk reach the ice front. Guided walks go onto the blue ice.")],
+"Nigardsbreen – Turtagrø":[
+   (R,"Feigumfossen",None,61.380,7.440,"","218 m waterfall seen across Lustrafjorden from the road."),
+   (R,"Skjolden",None,61.491,7.600,"","The innermost point of Sognefjorden, 205 km from the sea."),
+   (R,"Climb to Turtagrø",None,61.500,7.740,"","900 m up in 11 km, with the Hurrungane peaks opening ahead.")],
+"Lom – Geiranger":[
+   (R,"Ottadalen and Pollfoss",None,61.930,7.930,"","Dry pine valley, one of the least rainy places in Norway, with rapids at Pollfoss."),
+   (R,"Grotli and Breiddalsvatnet","Grotli",62.014,7.630,"","Bare highland at 900 m. Snow lies by the lake well into July."),
+   (D,"Gamle Strynefjellsvegen",None,62.000,7.500,"27 km of gravel one way from Grotli","Hand-built mountain road from 1894 with stone guard posts, past summer ski slopes."),
+   (D,"Dalsnibba","Dalsnibba",62.049,7.270,"+10 km return, 450 m climb, toll road","Viewpoint at 1,476 m straight down on Geirangerfjorden."),
+   (R,"Flydalsjuvet","Flydalsjuvet",62.085,7.215,"","The classic postcard ledge above Geiranger, on the descent.")],
+"Geiranger – Åndalsnes (Trollstigen)":[
+   (D,"Geirangerfjorden by boat","De syv systrene",62.107,7.094,"Sightseeing boat, 1.5 h","UNESCO World Heritage fjord. The boat passes the Seven Sisters and Suitor waterfalls."),
+   (R,"Ørnesvingen","Ørnesvingen",62.126,7.165,"","Top of the eleven Eagle Road hairpins, with the widest view of the fjord."),
+   (R,"Gudbrandsjuvet","Gudbrandsjuvet",62.330,7.470,"","Walkways over a 25 m deep slot gorge in Valldalen."),
+   (R,"Trollstigen","Trollstigen",62.456,7.666,"","Eleven hairpins at 9 % past Stigfossen waterfall, under the peaks Kongen, Dronninga and Bispen. You ride it downhill."),
+   (D,"Trollveggen","Trollveggen",62.490,7.740,"+20 km return from Åndalsnes","Europe's tallest vertical rock face, 1,000 m of the 1,700 m wall is sheer."),
+   (D,"Rampestreken","Rampestreken",62.563,7.705,"2–3 h hike from Åndalsnes","Steel ramp at 537 m above the town and Romsdalsfjorden.")],
+"Åndalsnes – Bud":[
+   (R,"Romsdalsfjorden",None,62.600,7.300,"","The south shore of the fjord, then the Vestnes–Molde ferry with the Romsdal Alps behind."),
+   (D,"Varden, Molde","Varden, Molde",62.752,7.150,"+8 km return, 400 m climb","The Molde panorama: 222 snow-capped peaks across the fjord."),
+   (R,"Bud and Hustadvika",None,62.907,6.914,"","Fishing village on one of the most exposed stretches of the Norwegian coast.")],
+"Bud – Batnfjordsøra (Atlantic Road)":[
+   (R,"Hustadvika coast road",None,62.960,7.100,"","National tourist route along low farmland and skerries facing open ocean."),
+   (R,"Atlanterhavsvegen","Storseisundbrua",63.017,7.354,"","Eight bridges hopping between islets. Storseisundet bridge is the famous curved one. Ridden out and back."),
+   (D,"Trollkyrkja","Trollkyrkja",62.860,7.380,"3 h hike from Fv64","Marble caves with an underground waterfall. Bring a headlamp.")],
+"Batnfjordsøra – Rindal":[
+   (R,"Bergsøysundet floating bridge",None,63.010,7.930,"","900 m bridge resting on pontoons, part of the island-hopping road east."),
+   (R,"Halsafjorden",None,63.060,8.170,"","Crossed on the Kanestraum–Halsa ferry, with the Trollheimen mountains inland."),
+   (R,"Surnadalen",None,62.970,8.660,"","Broad farming valley along the salmon river Surna, under the Trollheimen range.")],
+"Rindal – Trondheim":[
+   (R,"Orkla valley",None,63.200,9.700,"","Forest and farmland down to the fjord at Orkanger."),
+   (R,"Orkdalsfjorden",None,63.305,9.850,"","Back at Trondheimsfjorden for the last 40 km into the city.")],
+"Skaidi – Havøysund":[
+   (R,"Havøysund tourist route",None,70.800,24.950,"","Bare rock, sea and sky. Shattered slate cliffs and almost no traffic."),
+   (R,"Selvika",None,70.860,24.780,"","Concrete ramp winding down to a beach, one of the tourist route's art stops."),
+   (D,"Arctic View","Arctic View",71.010,24.600,"+8 km return, 250 m climb","Hilltop above Havøysund with a view over the Barents Sea and the islands.")],
+"Havøysund – Olderfjord":[
+   (R,"The same coast southbound",None,70.700,24.950,"","The road back, with Porsangerfjorden opening ahead.")],
+"Olderfjord – Repvåg":[
+   (R,"Porsangerfjorden",None,70.600,25.300,"","The road hugs the shore under layered slate cliffs. Reindeer on the beach are common.")],
+}
