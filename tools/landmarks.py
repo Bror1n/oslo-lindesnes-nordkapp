@@ -185,4 +185,71 @@ VLANDMARKS={
    (R,"The same coast southbound",None,70.700,24.950,"","The road back, with Porsangerfjorden opening ahead.")],
 "Olderfjord – Repvåg":[
    (R,"Porsangerfjorden",None,70.600,25.300,"","The road hugs the shore under layered slate cliffs. Reindeer on the beach are common.")],
+"Egersund – Lauvvik (Jæren coast)":[
+   (R,"Jæren beaches",None,58.540,5.745,"","Norway's flattest coast. Sand beaches, dunes and stone walls for 60 km."),
+   (D,"Orrestranda","Orrestranda",58.740,5.520,"+8 km return","The longest sand beach in Norway, 5 km of dunes."),
+   (D,"Gamle Stavanger","Gamle Stavanger",58.972,5.725,"+30 km return from Sandnes","Old town of white wooden houses above the harbour. The last city before Bergen.")],
+"Lauvvik – Hjelmeland (Ryfylke)":[
+   (R,"Høgsfjorden",None,58.900,6.064,"","Ten-minute ferry across the mouth of Lysefjord."),
+   (D,"Preikestolen","Preikestolen",58.986,6.190,"+18 km return from Jørpeland and a 4 h hike","The flat rock platform 604 m straight above Lysefjord. Needs most of a day."),
+   (R,"Tysdalsvatnet",None,59.110,6.100,"","Narrow lake under steep rock walls on the road to Årdal."),
+   (R,"Ryfylke fjord country",None,59.200,6.180,"","Orchards, fjord arms and smooth granite domes on the national tourist route.")],
+"Hjelmeland – Ølen":[
+   (R,"Jøsenfjorden",None,59.250,6.170,"","Crossed on the Hjelmeland–Nesvik ferry, with steep fjord walls to the east."),
+   (R,"Erfjord and Sandsfjorden",None,59.400,6.230,"","Fv13 climbs between small fjords and crosses Sandsfjorden on a high bridge."),
+   (D,"Sandsfossen","Sandsfossen",59.485,6.260,"+10 km return","Salmon waterfall at the mouth of the Suldalslågen river, with an underwater viewing window."),
+   (R,"Vindafjorden",None,59.500,5.900,"","Fv46 follows the fjord shore through Vikedal and Sandeid.")],
+"Ølen – Leirvik (Skånevik, Stord)":[
+   (D,"Langfoss","Langfoss",59.846,6.340,"+70 km return from Etne on E134","612 m waterfall running straight into Åkrafjorden."),
+   (R,"Skånevik",None,59.733,5.936,"","White wooden village on the fjord. The ferry to Utåker gives the first view of the Folgefonna glacier."),
+   (D,"Rosendal and Baroniet","Baroniet Rosendal",59.989,6.030,"+50 km return from Husnes","Norway's only barony, a 1665 manor with a rose garden under 1,400 m peaks and the Folgefonna glacier."),
+   (R,"Hardangerfjord mouth",None,59.780,5.560,"","The Ranavik–Skjersholmane ferry crosses the outer end of Hardangerfjorden to Stord.")],
+"Leirvik – Bergen (Tysnes)":[
+   (R,"Tysnes",None,59.980,5.550,"","Quiet island roads between Hardangerfjorden and Bjørnafjorden."),
+   (R,"Bjørnafjorden",None,60.100,5.470,"","Open fjord crossed on the Våge–Halhjem ferry."),
+   (R,"Bryggen, Bergen","Bryggen, Bergen",60.397,5.324,"","The Hanseatic wharf, UNESCO World Heritage, at the end of the stage."),
+   (D,"Fløyen","Fløyen",60.395,5.343,"Funicular or a 1 h walk","View over the city, the seven mountains and the islands to the west.")],
+"Bergen – Rutledal":[
+   (R,"Nordhordland bridge",None,60.523,5.280,"","1.6 km bridge that partly floats on pontoons, with a cycle path."),
+   (R,"Lindås heath coast",None,60.700,5.180,"","Low heather hills and sheltered sounds, the old coastal farming landscape."),
+   (R,"Fensfjorden",None,60.820,5.050,"","Crossed on the Leirvåg–Sløvåg ferry."),
+   (D,"Gulatinget","Gulatinget",60.955,5.083,"+8 km return","Site of the Viking Age assembly for western Norway, with a stone monument park by the fjord."),
+   (R,"Sognefjord mouth",None,61.070,5.188,"","Rutledal sits where Norway's longest fjord meets the sea.")],
+"Rutledal – Førde (Sognefjord mouth)":[
+   (R,"Sognefjorden crossing",None,61.090,5.240,"","The ferry crosses the outer fjord, 205 km from its head at Skjolden."),
+   (R,"Dalsfjorden",None,61.360,5.400,"","The fjord that Ingolfur Arnarson, the first settler of Iceland, sailed from."),
+   (D,"Huldefossen","Huldefossen",61.470,5.960,"+16 km return from Førde","90 m waterfall at Mo, east of Førde.")],
+"Førde – Svelgen":[
+   (R,"Førdefjorden",None,61.490,5.750,"","The road follows the north shore to Naustdal."),
+   (D,"Florø","Florø",61.600,5.030,"+36 km return from the Fv614 junction at Grov","Norway's westernmost town, facing an archipelago of islands and lighthouses."),
+   (R,"Ålfotbreen mountains",None,61.720,5.400,"","Bare, stepped sandstone mountains under Norway's westernmost glacier. One of the wettest areas in Europe.")],
+"Svelgen – Åheim (Nordfjord)":[
+   (R,"Ålfoten",None,61.830,5.650,"","Fjord village under the glacier, on a quiet road along the south shore of Nordfjord."),
+   (R,"Nordfjorden crossing",None,61.900,5.740,"","Isane–Stårheim ferry across the outer Nordfjord."),
+   (D,"Hornelen","Hornelen",61.856,5.250,"+50 km return on Rv15 towards Måløy for the view","Europe's highest sea cliff, 860 m straight out of the fjord."),
+   (D,"Vestkapp, Stad","Vestkapp",62.190,5.130,"+80 km return from Åheim","Plateau 496 m above the sea at the tip of Stad, the stormiest headland on the coast. Hoddevik surf beach is on the way.")],
+"Åheim – Ålesund":[
+   (R,"Vanylvsfjorden",None,62.100,5.580,"","Fjord road with the Stad peninsula across the water."),
+   (D,"Runde","Runde",62.400,5.620,"+60 km return from Gurskøya via Fosnavåg","Bird island with more than 100,000 pairs of seabirds. Puffins come in to the cliffs in the evening until early August."),
+   (R,"Sunnmøre Alps",None,62.380,6.100,"","Seen from the Hareid–Sulesund ferry: sharp peaks rising straight from the fjords."),
+   (R,"Ålesund and Aksla","Fjellstua, Ålesund",62.474,6.165,"","Art Nouveau town rebuilt after the fire of 1904. 418 steps lead up Aksla for the view.")],
+"Ålesund – Midsund":[
+   (R,"Haram coast",None,62.560,6.330,"","Farmland and skerries facing the open sea north of Ålesund."),
+   (R,"Midfjorden",None,62.620,6.480,"","Brattvåg–Dryna ferry out to the Midsund islands."),
+   (D,"Rørsethornet stone stairs","Rørsethornet",62.700,6.720,"3 h hike from Midsund","Sherpa-built staircase of 2,200 stone steps to a 659 m summit above the open sea.")],
+"Midsund – Bud":[
+   (R,"Otrøya",None,62.700,6.850,"","Island road under steep mountains, with the Romsdal Alps across the fjord."),
+   (D,"Varden, Molde","Varden, Molde",62.752,7.150,"+30 km return from Mordalsvågen, 400 m climb","The Molde panorama: 222 snow-capped peaks across the fjord."),
+   (R,"Bud and Hustadvika",None,62.907,6.914,"","Fishing village on one of the most exposed stretches of the Norwegian coast.")],
+"Batnfjordsøra – Aure":[
+   (R,"Bergsøysundet floating bridge",None,63.010,7.930,"","900 m bridge resting on pontoons, part of the island-hopping road east."),
+   (R,"Halsafjorden",None,63.060,8.170,"","Crossed on the Kanestraum–Halsa ferry, with the Trollheimen mountains inland."),
+   (R,"Arasvikfjorden",None,63.130,8.400,"","The second ferry of the day, out to the islands of Aure.")],
+"Aure – Krokstadøra":[
+   (R,"Aure coast road",None,63.280,8.750,"","Fv680 winds along sounds and inlets with the island of Hitra on the horizon."),
+   (R,"Hemnfjorden",None,63.290,9.090,"","Kyrksæterøra sits at the head of the fjord."),
+   (R,"Snillfjorden",None,63.390,9.450,"","Forested fjord arms and very little traffic.")],
+"Krokstadøra – Trondheim":[
+   (R,"Orkdalsfjorden",None,63.305,9.850,"","Back at Trondheimsfjorden for the last 40 km into the city."),
+   (R,"Trondheimsfjorden",None,63.380,10.200,"","The road follows the fjord shore past Børsa and Buvika.")],
 }

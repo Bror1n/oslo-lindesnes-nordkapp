@@ -118,7 +118,7 @@ def lm_lines(e):
 def hut_rows(label,e):
     return [f'| {label} | {"["+h["n"]+"]("+h["w"]+")" if h["w"] else h["n"]} | {h["c"]} | {h["d"]} | {h["e"]} | {h["cap"]} | {"yes" if h["lock"] else ""} | {h["op"]} |' for h in e["huts"]]
 sgn=lambda x:f'+{x}' if x>0 else (f'−{-x}' if x<0 else '±0')
-vm=["## Alternative routes","","Four variants can replace part of the main route. Switch them on in [kart.html](kart.html) to see the line and the new totals. Each has its own GPX in [variants/](variants/).","",
+vm=["## Alternative routes","",f"{[0,'One','Two','Three','Four','Five','Six','Seven'][len(variants)]} variants can replace part of the main route. Variants that cover the same stages cannot be combined. Switch them on in [kart.html](kart.html) to see the line and the new totals. Each has its own GPX in [variants/](variants/).","",
     "| Variant | Replaces stages | Distance | Climbing | Days |","|---|---|--:|--:|--:|"]
 for v,V in zip(variants,VARIANTS):
     vm.append(f'| {v["title"]} | {v["first"]}–{v["last"]}' .replace(f'{v["first"]}–{v["first"]}',str(v["first"]))+f' | {sgn(v["dkm"])} km | {sgn(v["dasc"])} m | {sgn(v["ddays"])} |')

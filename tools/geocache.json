@@ -1228,5 +1228,389 @@
   "lon": 7.8956364,
   "display": "Pollfossen, Skjåk, Innlandet, 2693, Norge",
   "fixed": true
+ },
+ "Stavanger": {
+  "lat": 58.9699675,
+  "lon": 5.7318101,
+  "display": "Stavanger, Rogaland, Norge",
+  "type": "administrative"
+ },
+ "Leirvik, Stord": {
+  "lat": 59.7809398,
+  "lon": 5.5005712,
+  "display": "Leirvik, Stord, Vestland, 5417, Norge",
+  "type": "town"
+ },
+ "Hodnanes": {
+  "lat": 59.8930132,
+  "lon": 5.5461628,
+  "display": "Hodnaneset, Tysnes, Vestland, 5413, Norge",
+  "type": "farm"
+ },
+ "Våge, Tysnes": {
+  "lat": 60.043495,
+  "lon": 5.5227811,
+  "display": "Våge, Tysnes, Vestland, 5680, Norge",
+  "type": "village"
+ },
+ "Halhjem": {
+  "lat": 60.1486848,
+  "lon": 5.4298465,
+  "display": "Halhjem, Bjørnafjorden, Vestland, 5208, Norge",
+  "type": "village"
+ },
+ "Osøyro": {
+  "lat": 60.1859484,
+  "lon": 5.4700485,
+  "display": "Osøyro, Bjørnafjorden, Vestland, 5200, Norge",
+  "type": "town"
+ },
+ "Bergen": {
+  "lat": 60.3943055,
+  "lon": 5.3259192,
+  "display": "Bergen, Vestland, Norge",
+  "type": "administrative"
+ },
+ "Knarvik": {
+  "lat": 60.5461492,
+  "lon": 5.285399,
+  "display": "Knarvik, Alver, Vestland, 5914, Norge",
+  "type": "town"
+ },
+ "Sløvåg": {
+  "lat": 60.8524007,
+  "lon": 5.069839,
+  "display": "Sløvåg, Gulen, Vestland, 5977, Norge",
+  "type": "neighbourhood"
+ },
+ "Rutledal": {
+  "lat": 61.0701892,
+  "lon": 5.1880285,
+  "display": "Rutledal, Gulen, Vestland, Norge",
+  "type": "hamlet"
+ },
+ "Rysjedalsvika": {
+  "lat": 61.1141217,
+  "lon": 5.2853532,
+  "display": "Rysjedalsvika, Rysjedal, Hyllestad, Vestland, 6953, Norge",
+  "type": "locality"
+ },
+ "Dale, Fjaler": {
+  "lat": 61.3635884,
+  "lon": 5.4002921,
+  "display": "Dale, Fjaler, Vestland, 6963, Norge",
+  "type": "village"
+ },
+ "Førde": {
+  "lat": 61.4521759,
+  "lon": 5.8571725,
+  "display": "Førde, Sunnfjord, Vestland, 6809, Norge",
+  "type": "town"
+ },
+ "Naustdal": {
+  "lat": 61.5095147,
+  "lon": 5.716199,
+  "display": "Naustdal, Sunnfjord, Vestland, 6817, Norge",
+  "type": "village"
+ },
+ "Eikefjord": {
+  "lat": 61.5881405,
+  "lon": 5.4624139,
+  "display": "Eikefjord, Kinn, Vestland, 6940, Norge",
+  "type": "village"
+ },
+ "Svelgen": {
+  "lat": 61.7683359,
+  "lon": 5.2906103,
+  "display": "Svelgen, Bremanger, Vestland, 6723, Norge",
+  "type": "village"
+ },
+ "Isane": {
+  "lat": 61.8773315,
+  "lon": 5.7161607,
+  "display": "Isane, Bremanger, Vestland, 6737, Norge",
+  "type": "hamlet"
+ },
+ "Stårheim": {
+  "lat": 61.9190033,
+  "lon": 5.761146,
+  "display": "Stårheim, Stad, Vestland, 6777, Norge",
+  "type": "village"
+ },
+ "Maurstad": {
+  "lat": 61.9404813,
+  "lon": 5.4609022,
+  "display": "Maurstad, Stad, Vestland, 6711, Norge",
+  "type": "hamlet"
+ },
+ "Åheim": {
+  "lat": 62.0360845,
+  "lon": 5.5306672,
+  "display": "Åheim, Vanylven, Møre og Romsdal, 6146, Norge",
+  "type": "village"
+ },
+ "Koparnes": {
+  "lat": 62.1708981,
+  "lon": 5.6400867,
+  "display": "Koparnes, Vanylven, Møre og Romsdal, 6142, Norge",
+  "type": "hamlet"
+ },
+ "Ulsteinvik": {
+  "lat": 62.3426629,
+  "lon": 5.84686,
+  "display": "Ulsteinvik, Ulstein, Møre og Romsdal, 6065, Norge",
+  "type": "town"
+ },
+ "Hareid": {
+  "lat": 62.3704027,
+  "lon": 6.0291726,
+  "display": "Hareid, Møre og Romsdal, 6060, Norge",
+  "type": "village"
+ },
+ "Sulesund": {
+  "lat": 62.3963463,
+  "lon": 6.1665272,
+  "display": "Sulesund, Sula, Møre og Romsdal, 6030, Norge",
+  "type": "hamlet"
+ },
+ "Ålesund": {
+  "lat": 62.4711412,
+  "lon": 6.1551755,
+  "display": "Ålesund, Møre og Romsdal, 6004, Norge",
+  "type": "city"
+ },
+ "Brattvåg": {
+  "lat": 62.599812,
+  "lon": 6.444248,
+  "display": "Brattvåg, Haram, Møre og Romsdal, 6270, Norge",
+  "type": "village"
+ },
+ "Midsund": {
+  "lat": 62.67386,
+  "lon": 6.6745516,
+  "display": "Midsund, Molde, Møre og Romsdal, 6475, Norge",
+  "type": "village"
+ },
+ "Mordalsvågen": {
+  "lat": 62.7305744,
+  "lon": 7.0015032,
+  "display": "Mordalsvågen, Mordal, Molde, Møre og Romsdal, 6411, Norge",
+  "type": "primary"
+ },
+ "Aure": {
+  "lat": 63.2682571,
+  "lon": 8.5312492,
+  "display": "Aure, Møre og Romsdal, 6693, Norge",
+  "type": "village"
+ },
+ "Kyrksæterøra": {
+  "lat": 63.2907955,
+  "lon": 9.0888635,
+  "display": "Kyrksæterøra, Heim, Trøndelag, 7200, Norge",
+  "type": "village"
+ },
+ "Krokstadøra": {
+  "lat": 63.3993733,
+  "lon": 9.5007707,
+  "display": "Krokstadøra, Orkland, Trøndelag, 7257, Norge",
+  "type": "village"
+ },
+ "Brekstad": {
+  "lat": 63.6868716,
+  "lon": 9.6664996,
+  "display": "Brekstad, Ørland, Trøndelag, 7130, Norge",
+  "type": "town"
+ },
+ "Rørvik, Indre Fosen": {
+  "lat": 63.5092151,
+  "lon": 10.1398652,
+  "display": "Rørvik, 715, Rørvika, Indre Fosen, Trøndelag, Norge",
+  "type": "ferry_terminal"
+ },
+ "Flakk": {
+  "lat": 63.4456314,
+  "lon": 10.1936993,
+  "display": "Flakk, Trondheim, Trøndelag, 7070, Norge",
+  "type": "village"
+ },
+ "Jektevik, Stord": {
+  "lat": 59.8851382,
+  "lon": 5.522157,
+  "display": "Jektevik, Bortveit, Stord, Vestland, 5413, Norge",
+  "type": "locality"
+ },
+ "Årvika ferjekai": {
+  "lat": 62.1912762,
+  "lon": 5.6339394,
+  "display": "Årvika ferjekai, Skredestranda, Rustene, Årvika, Sande, Møre og Romsdal, 6082, Norge",
+  "type": "parking"
+ },
+ "Valset ferjekai": {
+  "lat": 63.638366,
+  "lon": 9.68746,
+  "display": "Valset ferjekai, Agdenesveien, Valset, Orkland, Trøndelag, 7318, Norge",
+  "type": "bus_stop"
+ },
+ "Dryna ferjekai": {
+  "lat": 62.639931,
+  "lon": 6.523304,
+  "display": "Dryna ferjekai, Midøyvegen, Dryna, Molde, Møre og Romsdal, 6270, Norge",
+  "type": "bus_stop"
+ },
+ "Solholmen ferjekai": {
+  "lat": 62.71972,
+  "lon": 6.9372777,
+  "display": "Solholmen ferjekai, Utsidevegen, Solholmen, Molde, Møre og Romsdal, Norge",
+  "type": "parking"
+ },
+ "Larsnes": {
+  "lat": 62.2068371,
+  "lon": 5.5716078,
+  "display": "Larsnes, Sande, Møre og Romsdal, 6084, Norge",
+  "type": "village"
+ },
+ "Oanes": {
+  "lat": 58.9061768,
+  "lon": 6.0725801,
+  "display": "Oanes, Strand, Rogaland, 4110, Norge",
+  "type": "hamlet"
+ },
+ "Jørpeland": {
+  "lat": 59.0208917,
+  "lon": 6.0393553,
+  "display": "Jørpeland, Strand, Rogaland, 4103, Norge",
+  "type": "town"
+ },
+ "Tau, Strand": {
+  "lat": 59.0647739,
+  "lon": 5.9225031,
+  "display": "Tau, Strand, Rogaland, 4120, Norge",
+  "type": "village"
+ },
+ "Årdal, Hjelmeland": {
+  "lat": 59.1508412,
+  "lon": 6.1811957,
+  "display": "Årdal, Hjelmeland, Rogaland, 4137, Norge",
+  "type": "village"
+ },
+ "Hjelmelandsvågen": {
+  "lat": 59.2367398,
+  "lon": 6.1796864,
+  "display": "Hjelmeland, Rogaland, 4130, Norge",
+  "type": "village"
+ },
+ "Nesvik": {
+  "lat": 59.2637363,
+  "lon": 6.1590282,
+  "display": "Nesvik, Hjelmeland, Rogaland, 4146, Norge",
+  "type": "village"
+ },
+ "Sand, Suldal": {
+  "lat": 59.4840165,
+  "lon": 6.2508666,
+  "display": "Sand, Suldal, Rogaland, 4230, Norge",
+  "type": "village"
+ },
+ "Vikedal": {
+  "lat": 59.4981186,
+  "lon": 5.9025945,
+  "display": "Vikedal, Vindafjord, Rogaland, 5585, Norge",
+  "type": "village"
+ },
+ "Ølensjøen": {
+  "lat": 59.60687,
+  "lon": 5.7868317,
+  "display": "Ølsjøen, Nerheim, Ølen, Vindafjord, Rogaland, Norge",
+  "type": "bay"
+ },
+ "Etne": {
+  "lat": 59.6647828,
+  "lon": 5.9349433,
+  "display": "Etne, Vestland, 5590, Norge",
+  "type": "village"
+ },
+ "Skånevik": {
+  "lat": 59.7330482,
+  "lon": 5.9355815,
+  "display": "Skånevik, Etne, Vestland, 5593, Norge",
+  "type": "village"
+ },
+ "Utåker": {
+  "lat": 59.7851668,
+  "lon": 5.9024082,
+  "display": "Utåker, Holmedal, Kvinnherad, Vestland, 5453, Norge",
+  "type": "quarter"
+ },
+ "Husnes": {
+  "lat": 59.8609617,
+  "lon": 5.7563039,
+  "display": "Husnes, Kvinnherad, Vestland, 5460, Norge",
+  "type": "village"
+ },
+ "Ranavik": {
+  "lat": 59.8121309,
+  "lon": 5.6559587,
+  "display": "Ranavik, Kvinnherad, Vestland, 5455, Norge",
+  "type": "hamlet"
+ },
+ "Skjersholmane": {
+  "lat": 59.7481592,
+  "lon": 5.4676871,
+  "display": "Skjersholmane, Leirvik, Stord, Vestland, 5412, Norge",
+  "type": "islet"
+ },
+ "Erfjord": {
+  "lat": 59.3434228,
+  "lon": 6.2150117,
+  "display": "Erfjord, Erøyna, Suldal, Rogaland, 4233, Norge",
+  "type": "hamlet"
+ },
+ "Jelsa": {
+  "lat": 59.3390966,
+  "lon": 6.0295275,
+  "display": "Jelsa, Suldal, Rogaland, 4234, Norge",
+  "type": "village"
+ },
+ "Ropeid": {
+  "lat": 59.4848543,
+  "lon": 6.2006702,
+  "display": "Ropeid, Suldal, Rogaland, Norge",
+  "type": "hamlet"
+ },
+ "Marvik": {
+  "lat": 59.411012,
+  "lon": 6.0824071,
+  "display": "Marvik, Suldal, Rogaland, 4235, Norge",
+  "type": "hamlet"
+ },
+ "Rosendal": {
+  "lat": 59.9869792,
+  "lon": 6.0067979,
+  "display": "Rosendal, Kvinnherad, Vestland, 5470, Norge",
+  "type": "village"
+ },
+ "Florø": {
+  "lat": 61.6002583,
+  "lon": 5.0349596,
+  "display": "Florø, Kinn, Vestland, 6906, Norge",
+  "type": "town"
+ },
+ "Askvoll": {
+  "lat": 61.3469491,
+  "lon": 5.0638033,
+  "display": "Askvoll, Vestland, 6980, Norge",
+  "type": "village"
+ },
+ "Eivindvik": {
+  "lat": 60.9800683,
+  "lon": 5.0782594,
+  "display": "Eivindvik, Gulen, Vestland, 5966, Norge",
+  "type": "village"
+ },
+ "Kalvåg": {
+  "lat": 61.7667615,
+  "lon": 4.8789988,
+  "display": "Kalvåg, Bremanger, Vestland, 6729, Norge",
+  "type": "village"
  }
 }

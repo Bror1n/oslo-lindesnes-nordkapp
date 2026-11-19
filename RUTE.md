@@ -71,14 +71,183 @@ The stages average 92 km. Riding 110–120 km a day instead brings the trip down
 <!-- VARIANTS:START -->
 ## Alternative routes
 
-Four variants can replace part of the main route. Switch them on in [kart.html](kart.html) to see the line and the new totals. Each has its own GPX in [variants/](variants/).
+Five variants can replace part of the main route. Variants that cover the same stages cannot be combined. Switch them on in [kart.html](kart.html) to see the line and the new totals. Each has its own GPX in [variants/](variants/).
 
 | Variant | Replaces stages | Distance | Climbing | Days |
 |---|---|--:|--:|--:|
+| The coast to Trondheim | 6–19 | +360 km | +2130 m | +4 |
 | Lysefjord and the North Sea Road | 6–7 | +142 km | +3770 m | +2 |
 | Nigardsbreen and Jostedalen | 14–15 | ±0 km | −1120 m | ±0 |
 | Geiranger, Trollstigen and the Atlantic Road | 17–19 | +285 km | +2740 m | +3 |
 | Havøysund | 38 | +178 km | +1230 m | +2 |
+
+### The coast to Trondheim
+
+Stays on the west coast all the way from Lindesnes to Trondheim instead of crossing the mountains: Jæren, Ryfylke, the Sunnhordland islands, Bergen, the mouths of Sognefjord and Nordfjord, Ålesund, the Atlantic Road and the Nordmøre coast.
+
+- The longest variant: 18 riding days instead of 14, about 360 km more, and 15 ferries. Ferry waits make the days longer than the distances suggest.
+- Passengers travel free on the public road ferries in Vestland, Møre og Romsdal and Trøndelag, and only vehicles pay. Check that a bicycle counts as free on each one. The Lauvvik–Oanes ferry is privately run and sells tickets on board.
+- The outer coast north of Stavanger cannot be ridden: the Byfjord and Mastrafjord tunnels are closed to bikes and the Skudeneshavn ferry stopped in 2013. The track goes through Ryfylke instead. The coast bus from Stavanger to Haugesund is the shortcut if you accept a bus.
+- Kristiansund is left out because both roads into it use subsea tunnels closed to bikes.
+- Many tunnels on Fv57, Rv5, Fv614 and Fv61 are open to bikes. Carry strong front and rear lights and a reflective vest.
+- Bergen – Rutledal is 121 km. It can be cut at the Leirvåg–Sløvåg ferry.
+- The west coast is the wettest part of Norway. Expect rain on more than half the days.
+
+| Stage | km | Climb m | Gravel km | Ferries |
+|---|--:|--:|--:|--:|
+| Lindesnes fyr – Flekkefjord | 121 | 1610 | 16 |  |
+| Flekkefjord – Egersund (Jøssingfjord) | 68 | 1000 |  |  |
+| Egersund – Lauvvik (Jæren coast) | 93 | 430 | 12 |  |
+| Lauvvik – Hjelmeland (Ryfylke) | 89 | 870 |  | 1 |
+| Hjelmeland – Ølen | 91 | 1150 |  | 1 |
+| Ølen – Leirvik (Skånevik, Stord) | 70 | 590 | 2 | 2 |
+| Leirvik – Bergen (Tysnes) | 78 | 740 |  | 2 |
+| Bergen – Rutledal | 121 | 1130 |  | 1 |
+| Rutledal – Førde (Sognefjord mouth) | 87 | 1010 | 6 | 1 |
+| Førde – Svelgen | 90 | 1340 |  |  |
+| Svelgen – Åheim (Nordfjord) | 73 | 810 |  | 1 |
+| Åheim – Ålesund | 105 | 900 |  | 2 |
+| Ålesund – Midsund | 66 | 540 | 3 | 1 |
+| Midsund – Bud | 75 | 310 |  | 1 |
+| Bud – Batnfjordsøra (Atlantic Road) | 94 | 300 |  |  |
+| Batnfjordsøra – Aure | 89 | 880 | 14 | 2 |
+| Aure – Krokstadøra | 109 | 1220 |  |  |
+| Krokstadøra – Trondheim | 82 | 640 | 4 |  |
+
+**Lindesnes fyr – Flekkefjord**
+
+- **Lyngdalsfjorden and Kvinesheia** (on the route). Fjord arms and forested ridges. The hilliest part of the south coast.
+- **Lista** (detour, +45 km). Flat, windswept peninsula with long sand beaches, a lighthouse and a major bird migration site.
+- **Fedafjorden** (on the route). Narrow fjord crossed high above the water before the drop to Flekkefjord.
+
+**Flekkefjord – Egersund (Jøssingfjord)**
+
+- **Brufjell potholes** (detour, 3 h hike from Roligheten near Åna-Sira). Giant potholes ground into a sea cliff by Ice Age waves. Chains on the last steep section.
+- **Jøssingfjord and Helleren** (on the route). Sheer-walled fjord where two old houses sit under a huge rock overhang.
+- **Magma Geopark coast** (on the route). Fv44 winds through bare, pale anorthosite hills, the same rock as the Moon's highlands.
+- **Eigerøy lighthouse** (detour, +16 km return and a 30 min walk). Cast-iron lighthouse on the open North Sea.
+
+**Egersund – Lauvvik (Jæren coast)**
+
+- **Jæren beaches** (on the route). Norway's flattest coast. Sand beaches, dunes and stone walls for 60 km.
+- **Orrestranda** (detour, +8 km return). The longest sand beach in Norway, 5 km of dunes.
+- **Gamle Stavanger** (detour, +30 km return from Sandnes). Old town of white wooden houses above the harbour. The last city before Bergen.
+
+**Lauvvik – Hjelmeland (Ryfylke)**
+
+- **Høgsfjorden** (on the route). Ten-minute ferry across the mouth of Lysefjord.
+- **Preikestolen** (detour, +18 km return from Jørpeland and a 4 h hike). The flat rock platform 604 m straight above Lysefjord. Needs most of a day.
+- **Tysdalsvatnet** (on the route). Narrow lake under steep rock walls on the road to Årdal.
+- **Ryfylke fjord country** (on the route). Orchards, fjord arms and smooth granite domes on the national tourist route.
+
+**Hjelmeland – Ølen**
+
+- **Jøsenfjorden** (on the route). Crossed on the Hjelmeland–Nesvik ferry, with steep fjord walls to the east.
+- **Erfjord and Sandsfjorden** (on the route). Fv13 climbs between small fjords and crosses Sandsfjorden on a high bridge.
+- **Sandsfossen** (detour, +10 km return). Salmon waterfall at the mouth of the Suldalslågen river, with an underwater viewing window.
+- **Vindafjorden** (on the route). Fv46 follows the fjord shore through Vikedal and Sandeid.
+
+**Ølen – Leirvik (Skånevik, Stord)**
+
+- **Langfoss** (detour, +70 km return from Etne on E134). 612 m waterfall running straight into Åkrafjorden.
+- **Skånevik** (on the route). White wooden village on the fjord. The ferry to Utåker gives the first view of the Folgefonna glacier.
+- **Rosendal and Baroniet** (detour, +50 km return from Husnes). Norway's only barony, a 1665 manor with a rose garden under 1,400 m peaks and the Folgefonna glacier.
+- **Hardangerfjord mouth** (on the route). The Ranavik–Skjersholmane ferry crosses the outer end of Hardangerfjorden to Stord.
+
+**Leirvik – Bergen (Tysnes)**
+
+- **Tysnes** (on the route). Quiet island roads between Hardangerfjorden and Bjørnafjorden.
+- **Bjørnafjorden** (on the route). Open fjord crossed on the Våge–Halhjem ferry.
+- **Bryggen, Bergen** (on the route). The Hanseatic wharf, UNESCO World Heritage, at the end of the stage.
+- **Fløyen** (detour, funicular or a 1 h walk). View over the city, the seven mountains and the islands to the west.
+
+**Bergen – Rutledal**
+
+- **Nordhordland bridge** (on the route). 1.6 km bridge that partly floats on pontoons, with a cycle path.
+- **Lindås heath coast** (on the route). Low heather hills and sheltered sounds, the old coastal farming landscape.
+- **Fensfjorden** (on the route). Crossed on the Leirvåg–Sløvåg ferry.
+- **Gulatinget** (detour, +8 km return). Site of the Viking Age assembly for western Norway, with a stone monument park by the fjord.
+- **Sognefjord mouth** (on the route). Rutledal sits where Norway's longest fjord meets the sea.
+
+**Rutledal – Førde (Sognefjord mouth)**
+
+- **Sognefjorden crossing** (on the route). The ferry crosses the outer fjord, 205 km from its head at Skjolden.
+- **Dalsfjorden** (on the route). The fjord that Ingolfur Arnarson, the first settler of Iceland, sailed from.
+- **Huldefossen** (detour, +16 km return from Førde). 90 m waterfall at Mo, east of Førde.
+
+**Førde – Svelgen**
+
+- **Førdefjorden** (on the route). The road follows the north shore to Naustdal.
+- **Florø** (detour, +36 km return from the Fv614 junction at Grov). Norway's westernmost town, facing an archipelago of islands and lighthouses.
+- **Ålfotbreen mountains** (on the route). Bare, stepped sandstone mountains under Norway's westernmost glacier. One of the wettest areas in Europe.
+
+**Svelgen – Åheim (Nordfjord)**
+
+- **Ålfoten** (on the route). Fjord village under the glacier, on a quiet road along the south shore of Nordfjord.
+- **Nordfjorden crossing** (on the route). Isane–Stårheim ferry across the outer Nordfjord.
+- **Hornelen** (detour, +50 km return on Rv15 towards Måløy for the view). Europe's highest sea cliff, 860 m straight out of the fjord.
+- **Vestkapp, Stad** (detour, +80 km return from Åheim). Plateau 496 m above the sea at the tip of Stad, the stormiest headland on the coast. Hoddevik surf beach is on the way.
+
+**Åheim – Ålesund**
+
+- **Vanylvsfjorden** (on the route). Fjord road with the Stad peninsula across the water.
+- **Runde** (detour, +60 km return from Gurskøya via Fosnavåg). Bird island with more than 100,000 pairs of seabirds. Puffins come in to the cliffs in the evening until early August.
+- **Sunnmøre Alps** (on the route). Seen from the Hareid–Sulesund ferry: sharp peaks rising straight from the fjords.
+- **Ålesund and Aksla** (on the route). Art Nouveau town rebuilt after the fire of 1904. 418 steps lead up Aksla for the view.
+
+**Ålesund – Midsund**
+
+- **Haram coast** (on the route). Farmland and skerries facing the open sea north of Ålesund.
+- **Midfjorden** (on the route). Brattvåg–Dryna ferry out to the Midsund islands.
+- **Rørsethornet stone stairs** (detour, 3 h hike from Midsund). Sherpa-built staircase of 2,200 stone steps to a 659 m summit above the open sea.
+
+**Midsund – Bud**
+
+- **Otrøya** (on the route). Island road under steep mountains, with the Romsdal Alps across the fjord.
+- **Varden, Molde** (detour, +30 km return from Mordalsvågen, 400 m climb). The Molde panorama: 222 snow-capped peaks across the fjord.
+- **Bud and Hustadvika** (on the route). Fishing village on one of the most exposed stretches of the Norwegian coast.
+
+**Bud – Batnfjordsøra (Atlantic Road)**
+
+- **Hustadvika coast road** (on the route). National tourist route along low farmland and skerries facing open ocean.
+- **Atlanterhavsvegen** (on the route). Eight bridges hopping between islets. Storseisundet bridge is the famous curved one. Ridden out and back.
+- **Trollkyrkja** (detour, 3 h hike from Fv64). Marble caves with an underground waterfall. Bring a headlamp.
+
+**Batnfjordsøra – Aure**
+
+- **Bergsøysundet floating bridge** (on the route). 900 m bridge resting on pontoons, part of the island-hopping road east.
+- **Halsafjorden** (on the route). Crossed on the Kanestraum–Halsa ferry, with the Trollheimen mountains inland.
+- **Arasvikfjorden** (on the route). The second ferry of the day, out to the islands of Aure.
+
+**Aure – Krokstadøra**
+
+- **Aure coast road** (on the route). Fv680 winds along sounds and inlets with the island of Hitra on the horizon.
+- **Hemnfjorden** (on the route). Kyrksæterøra sits at the head of the fjord.
+- **Snillfjorden** (on the route). Forested fjord arms and very little traffic.
+
+**Krokstadøra – Trondheim**
+
+- **Orkdalsfjorden** (on the route). Back at Trondheimsfjorden for the last 40 km into the city.
+- **Trondheimsfjorden** (on the route). The road follows the fjord shore past Børsa and Buvika.
+
+Backup cabins:
+
+| Stage | Cabin | Type | Off track km | Altitude m | Beds | DNT key | Run by |
+|---|---|---|--:|--:|--:|:-:|---|
+| Flekkefjord – Egersund (Jøssingfjord) | [Gården Li](https://ut.no/hytte/g%C3%A5rden-li) | No-service cabin | 3.8 |  | 36 | yes | Flekkefjord og Oplands Turistforening |
+| Egersund – Lauvvik (Jæren coast) | [Nodhagen](https://ut.no/hytte/nodhagen) | No-service cabin | 1.4 |  | 10 | yes | Stavanger Turistforening |
+| Egersund – Lauvvik (Jæren coast) | [Gramstad](https://ut.no/hytte/gramstad) | No-service cabin | 1.5 |  | 12 | yes |  |
+| Lauvvik – Hjelmeland (Ryfylke) | [Veslebu](https://ut.no/hytte/veslebu) | No-service cabin | 2.5 | 237 | 5 | yes | Stavanger Turistforening |
+| Lauvvik – Hjelmeland (Ryfylke) | [Preikestolhytta](https://preikestolenbasecamp.com/produkt/preikestolhytta/) | Staffed lodge | 2.7 | 270 | 150 | yes | Stavanger Turistforening |
+| Ølen – Leirvik (Skånevik, Stord) | [Olabu](https://ut.no/hytte/3.1866/) | Self-service cabin | 4.8 | 467 | 4 | yes | Haugesund Turistforening |
+| Ølen – Leirvik (Skånevik, Stord) | [Olalia fjellstove](https://ut.no/hytte/olalihytta) | Self-service cabin | 4.8 | 467 | 60 | yes | Haugesund Turistforening |
+| Rutledal – Førde (Sognefjord mouth) | [Massbu](https://ut.no/hytte/massbu) | No-service cabin | 3.3 | 370 | 6 | yes | Indre Sunnfjord Turlag |
+| Rutledal – Førde (Sognefjord mouth) | [Nipebu](https://ut.no/hytte/nipebu) | Self-service cabin | 4.7 | 500 | 9 | yes | Indre Sunnfjord Turlag |
+| Førde – Svelgen | [Grytadalsbu](https://ut.no/hytte/grytadalsbu) | No-service cabin | 0.4 | 325 | 5 | yes | Flora Turlag |
+| Svelgen – Åheim (Nordfjord) | Knekkevasshytta | Cabin, type not recorded | 0.5 |  |  |  |  |
+| Batnfjordsøra – Aure | [Nersetra](https://ut.no/hytte/1099/nersetra) | Self-service cabin | 3.3 | 180 | 8 | yes | Kristiansund og Nordmøre Turistforening |
+| Batnfjordsøra – Aure | [Jutulbu](https://ut.no/hytte/jutulbu) | Self-service cabin | 3.6 | 400 | 19 | yes | Kristiansund og Nordmøre Turistforening |
+| Aure – Krokstadøra | [Rovangen](https://ut.no/hytte/10565/rovangen) | Self-service cabin | 3.0 | 447 | 14 | yes | Kristiansund og Nordmøre Turistforening |
 
 ### Lysefjord and the North Sea Road
 
