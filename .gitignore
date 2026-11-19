@@ -7,3 +7,4 @@ tools/route.log
 tools/__pycache__/
 tools/variants.log
 tools/upgrade.log
+tools/gravel.log

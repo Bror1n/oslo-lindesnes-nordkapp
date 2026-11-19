@@ -4,7 +4,7 @@ from stages import STAGES, FERRIES
 geo=json.load(open(os.path.join(HERE,'geocache.json')))
 cache_p=os.path.join(HERE,'segcache2.json')
 segc=json.load(open(cache_p)) if os.path.exists(cache_p) else {}
-from variants import VARIANTS, V_FERRIES
+from variants import VARIANTS, V_FERRIES, GRAVEL_BLOCK
 ferry=set(FERRIES)|set(V_FERRIES)
 def hav(a,b):
     R=6371000; la1,lo1,la2,lo2=map(math.radians,(a[1],a[0],b[1],b[0]))
@@ -116,6 +116,13 @@ def upgrade():
     json.dump(segc,open(cache_p,"w")); print("left",sum(1 for v in segc.values() if "unp_r" not in v))
 if __name__=="__main__":
     if "upgrade" in sys.argv: upgrade(); sys.exit()
+    if "gravel" in sys.argv:
+        res={"variants":{}}
+        print("=== GRAVEL main",flush=True); res["main"]=route_stages(STAGES,None,True)
+        print("=== GRAVEL block",flush=True); res["block"]=route_stages(GRAVEL_BLOCK["stages"],GRAVEL_BLOCK["start"],True)
+        for v in VARIANTS:
+            print("=== GRAVEL VARIANT",v["id"],flush=True); res["variants"][v["id"]]=route_stages(v["stages"],v["start"],True)
+        json.dump(res,open(os.path.join(HERE,'routed_gravel.json'),"w")); sys.exit()
     if "variants" in sys.argv:
         res={}
         for v in VARIANTS:

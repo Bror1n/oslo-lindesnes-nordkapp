@@ -1,7 +1,7 @@
 import json, os, math, html, re, sys
 HERE=os.path.dirname(os.path.abspath(__file__)); ROOT=os.path.dirname(HERE); sys.path.insert(0,HERE)
 from landmarks import LANDMARKS, VLANDMARKS
-from variants import VARIANTS
+from variants import VARIANTS, GRAVEL_BLOCK, GRAVEL_NOTES
 st=json.load(open(os.path.join(HERE,'routed.json')))
 vr=json.load(open(os.path.join(HERE,'routed_variants.json')))
 LG=json.load(open(os.path.join(HERE,'landmark_geo.json')))
@@ -94,27 +94,32 @@ def entry(s,landmarks,huts):
     return {"name":s["name"],"km":round(s["km"]),"asc":int(round(s["asc"],-1)),"unp":round(s["unpaved_km"]),"ferries":len(s["ferries"]),
             "lm":lms(landmarks,s),"huts":huts,
             "segs":[x for g in s["segs"] for x in pieces(g)]}
+gr=json.load(open(os.path.join(HERE,'routed_gravel.json')))
+def with_g(E,S,GS):
+    """attach the gravel-mode version to every stage whose track differs"""
+    gh=huts_for(GS)
+    for e,s,g,h in zip(E,S,GS,gh):
+        if abs(s["km"]-g["km"])>0.05 or abs(s["unpaved_km"]-g["unpaved_km"])>0.05:
+            ge=entry(g,[],h); e["g"]={k:ge[k] for k in("km","asc","unp","ferries","huts","segs")}
+eff=lambda e:dict(e,**e["g"]) if "g" in e else e
 mh=huts_for(st)
 main=[entry(s,LANDMARKS.get(i,[]),mh[i-1]) for i,s in enumerate(st,1)]
 names=[s["name"] for s in st]
+with_g(main,st,gr["main"])
+ba=names.index(GRAVEL_BLOCK["first"])+1; bb=names.index(GRAVEL_BLOCK["last"])+1
+bh=huts_for(gr["block"]); BE=[entry(s,VLANDMARKS.get(s["name"],[]),bh[i]) for i,s in enumerate(gr["block"])]
+gmain=[eff(e) for e in main[:ba-1]]+BE+[eff(e) for e in main[bb:]]      # gravel mode with no variant switched on
 variants=[]
 for v in VARIANTS:
     S=vr[v["id"]]; vh=huts_for(S)
     a=names.index(v["first"])+1; b=names.index(v["last"])+1
     E=[entry(s,VLANDMARKS.get(s["name"]) or (LANDMARKS.get(names.index(s["name"])+1,[]) if s["name"] in names else []),vh[i]) for i,s in enumerate(S)]
+    with_g(E,S,gr["variants"][v["id"]])
     repl=main[a-1:b]
-    if v.get("gravel"):     # whole-route mode: keep the part colours, flag the stages that differ from the main route
-        part=0
-        for e in E:
-            e["p"]=part
-            if e["name"].endswith("Lindesnes fyr"): part=1
-            if e["name"].endswith("Trondheim"): part=2
-            m=main[names.index(e["name"])] if e["name"] in names else None
-            e["chg"]=int(m is None or abs(m["km"]-e["km"])>1 or abs(m["unp"]-e["unp"])>1)
     variants.append({"id":v["id"],"title":v["title"],"blurb":v["blurb"],"first":a,"last":b,"stages":E,
-        "whole":int(bool(v.get("gravel"))),"dunp":sum(e["unp"] for e in E)-sum(e["unp"] for e in repl),"dkm":sum(e["km"] for e in E)-sum(e["km"] for e in repl),"dasc":sum(e["asc"] for e in E)-sum(e["asc"] for e in repl),"ddays":len(E)-len(repl)})
+        "dkm":sum(e["km"] for e in E)-sum(e["km"] for e in repl),"dasc":sum(e["asc"] for e in E)-sum(e["asc"] for e in repl),"ddays":len(E)-len(repl)})
 b_end=next(i for i,s in enumerate(st,1) if s["name"].endswith("Trondheim"))
-DATA={"main":main,"variants":variants,"parts":[[1,5,"A · Oslo – Lindesnes","#c2410c"],[6,b_end,"B · Lindesnes – Trondheim","#15803d"],[b_end+1,len(main),"C · Trondheim – Nordkapp","#1d4ed8"]]}
+DATA={"main":main,"variants":variants,"gblock":{"first":ba,"last":bb,"stages":BE},"parts":[[1,5,"A · Oslo – Lindesnes","#c2410c"],[6,b_end,"B · Lindesnes – Trondheim","#15803d"],[b_end+1,len(main),"C · Trondheim – Nordkapp","#1d4ed8"]]}
 
 # ---------- GPX ----------
 def gpx(stages,title):
@@ -137,7 +142,11 @@ for d in ('stages','variants'):
     for f in os.listdir(os.path.join(ROOT,d)): os.remove(os.path.join(ROOT,d,f))
 for i,s in enumerate(st,1): open(os.path.join(ROOT,'stages',f'{i:02d}_{slug(s["name"])}.gpx'),'w').write(gpx([(i,s)],s["name"]))
 open(os.path.join(ROOT,'oslo-lindesnes-nordkapp.gpx'),'w').write(gpx(list(enumerate(st,1)),"Oslo – Lindesnes – Nordkapp"))
-for v in VARIANTS: open(os.path.join(ROOT,'variants',f'{v["id"]}.gpx'),'w').write(gpx(list(enumerate(vr[v["id"]],1)),v["title"]))
+for v in VARIANTS:
+    open(os.path.join(ROOT,'variants',f'{v["id"]}.gpx'),'w').write(gpx(list(enumerate(vr[v["id"]],1)),v["title"]))
+    if any("g" in e for e in next(x for x in variants if x["id"]==v["id"])["stages"]):
+        open(os.path.join(ROOT,'variants',f'{v["id"]}-gravel.gpx'),'w').write(gpx(list(enumerate(gr["variants"][v["id"]],1)),v["title"]+", gravel mode"))
+open(os.path.join(ROOT,'variants','gravel.gpx'),'w').write(gpx(list(enumerate(gr["main"][:ba-1]+gr["block"]+gr["main"][bb:],1)),"Oslo – Lindesnes – Nordkapp, gravel mode"))
 
 # ---------- map ----------
 t=open(os.path.join(HERE,'kart.template.html')).read()
@@ -149,25 +158,12 @@ def lm_lines(e):
 def hut_rows(label,e):
     return [f'| {label} | {"["+h["n"]+"]("+h["w"]+")" if h["w"] else h["n"]} | {h["c"]} | {h["d"]} | {h["e"]} | {h["cap"]} | {"yes" if h["lock"] else ""} | {h["op"]} |' for h in e["huts"]]
 sgn=lambda x:f'+{x}' if x>0 else (f'−{-x}' if x<0 else '±0')
-vm=["## Alternative routes","",f"{[0,'One','Two','Three','Four','Five','Six','Seven'][sum(1 for v in variants if not v['whole'])]} variants can replace part of the main route. Variants that cover the same stages cannot be combined. Switch them on in [kart.html](kart.html) to see the line and the new totals. Each has its own GPX in [variants/](variants/).","",
+vm=["## Alternative routes","",f"{[0,'One','Two','Three','Four','Five','Six','Seven'][len(variants)]} variants can replace part of the main route. Variants that cover the same stages cannot be combined. Switch them on in [kart.html](kart.html) to see the line and the new totals. Each has its own GPX in [variants/](variants/).","",
     "| Variant | Replaces stages | Distance | Climbing | Days |","|---|---|--:|--:|--:|"]
 for v,V in zip(variants,VARIANTS):
-    if v["whole"]: continue
     vm.append(f'| {v["title"]} | {v["first"]}–{v["last"]}' .replace(f'{v["first"]}–{v["first"]}',str(v["first"]))+f' | {sgn(v["dkm"])} km | {sgn(v["dasc"])} m | {sgn(v["ddays"])} |')
 vm.append("")
 for v,V in zip(variants,VARIANTS):
-    if v["whole"]:
-        vm+=[f'### {v["title"]}',"",v["blurb"],"",f'Compared with the main route: {sgn(v["dunp"])} km gravel, {sgn(v["dkm"])} km, {sgn(v["dasc"])} m climbing, {sgn(v["ddays"])} day. It is a separate button on the map and cannot be combined with the variants above.',""]
-        for n in V.get("notes",[]): vm.append(f'- {n}')
-        vm+=["","Stages that differ from the main route:","","| Stage | km | Climb m | Gravel km | Main route gravel km |","|---|--:|--:|--:|--:|"]
-        for i,e in enumerate(v["stages"],1):
-            if e["chg"]: vm.append(f'| {i}. {e["name"]} | {e["km"]} | {e["asc"]} | {e["unp"]} | {main[names.index(e["name"])]["unp"] if e["name"] in names else "new"} |')
-        vm.append("")
-        for e in v["stages"]:
-            if e["name"] not in names and e["lm"]: vm+=[f'**{e["name"]}**',""]+lm_lines(e)+[""]
-        hr=[r for e in v["stages"] if e["name"] not in names for r in hut_rows(e["name"],e)]
-        if hr: vm+=["Backup cabins on the new stages:","","| Stage | Cabin | Type | Off track km | Altitude m | Beds | DNT key | Run by |","|---|---|---|--:|--:|--:|:-:|---|"]+hr+[""]
-        continue
     vm+=[f'### {v["title"]}',"",v["blurb"],""]
     for n in V.get("notes",[]): vm.append(f'- {n}')
     if V.get("notes"): vm.append("")
@@ -178,6 +174,26 @@ for v,V in zip(variants,VARIANTS):
         if e["lm"]: vm+=[f'**{e["name"]}**',""]+lm_lines(e)+[""]
     hr=[r for e in v["stages"] for r in hut_rows(e["name"],e)]
     if hr: vm+=["Backup cabins:","","| Stage | Cabin | Type | Off track km | Altitude m | Beds | DNT key | Run by |","|---|---|---|--:|--:|--:|:-:|---|"]+hr+[""]
+T=lambda L:(sum(e["km"] for e in L),sum(e["asc"] for e in L),sum(e["unp"] for e in L))
+tm,tg=T(main),T(gmain)
+vm+=["## Gravel mode","","A switch on the map that moves the route onto gravel roads wherever that makes sense. It also applies to any alternative route that is switched on.","",
+     f'With no alternative switched on: {tg[2]} km gravel instead of {tm[2]} km, {sgn(tg[0]-tm[0])} km, {sgn(tg[1]-tm[1])} m climbing, {sgn(len(gmain)-len(main))} day. GPX in [variants/gravel.gpx](variants/gravel.gpx).',""]
+vm+=[f'- {n}' for n in GRAVEL_NOTES]
+vm+=["","Main route stages that change in gravel mode:","","| Stage | km | Climb m | Gravel km | Without gravel mode |","|---|--:|--:|--:|--:|"]
+for i,e in enumerate(main,1):
+    if i==ba:
+        for x in BE: vm.append(f'| {x["name"]} | {x["km"]} | {x["asc"]} | {x["unp"]} | new, replaces stages {ba}–{bb} |')
+    if "g" in e and not ba<=i<=bb: vm.append(f'| {i}. {e["name"]} | {e["g"]["km"]} | {e["g"]["asc"]} | {e["g"]["unp"]} | {e["km"]} km, {e["unp"]} km gravel |')
+vm.append("")
+for e in BE:
+    if e["lm"]: vm+=[f'**{e["name"]}**',""]+lm_lines(e)+[""]
+hr=[r for e in BE for r in hut_rows(e["name"],e)]
+if hr: vm+=["Backup cabins on the new stages:","","| Stage | Cabin | Type | Off track km | Altitude m | Beds | DNT key | Run by |","|---|---|---|--:|--:|--:|:-:|---|"]+hr+[""]
+vm+=["Alternative routes in gravel mode:","","| Variant | Gravel km | Gravel km in gravel mode | Distance change | Stages rerouted | GPX |","|---|--:|--:|--:|--:|---|"]
+for v in variants:
+    E=v["stages"]; G=[eff(e) for e in E]; n=sum(1 for e in E if "g" in e)
+    vm.append(f'| {v["title"]} | {T(E)[2]} | {T(G)[2]} | {sgn(T(G)[0]-T(E)[0])} km | {n} | {"[variants/"+v["id"]+"-gravel.gpx](variants/"+v["id"]+"-gravel.gpx)" if n else "same track"} |')
+vm.append("")
 md=["## Landmarks and detours by stage","","**On the route** needs no extra riding. **Detour** leaves the track, with the added distance or time in brackets. All of them are marked on [kart.html](kart.html).",""]
 for i,e in enumerate(main,1): md+=[f'### {i}. {e["name"]}',""]+lm_lines(e)+[""]
 md+=["## DNT cabins as backup","",
@@ -197,5 +213,7 @@ r=put(r,"LANDMARKS",md,"## Things that decide the route")
 r=put(r,"VARIANTS",vm,"<!-- LANDMARKS:START -->")
 open(p,'w').write(r)
 print("main",len(main),"stages",sum(e["km"] for e in main),"km; huts",sum(len(e["huts"]) for e in main),"landmarks",sum(len(e["lm"]) for e in main))
+print("gravel mode main:",len(gmain),"stages",tg,"vs",tm)
+for v in variants: print("   g",v["id"],T(v["stages"]),"->",T([eff(e) for e in v["stages"]]),sum(1 for e in v["stages"] if "g" in e),"stages rerouted")
 for v in variants: print(" ",v["id"],"replaces",v["first"],v["last"],"dkm",v["dkm"],"dasc",v["dasc"],"ddays",v["ddays"],"huts",sum(len(e["huts"]) for e in v["stages"]),"lm",sum(len(e["lm"]) for e in v["stages"]))
 print("kart.html MB",os.path.getsize(os.path.join(ROOT,'kart.html'))/1e6)

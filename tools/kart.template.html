@@ -61,7 +61,7 @@
  #gmode{margin:0 14px 12px;border:1px solid #1f2937;border-radius:10px;background:#fff;overflow:hidden} #gmode .vb[aria-pressed=true]{background:#fef6dc} #gmode .vb[aria-pressed=true] .sw{background:#1f2937} #gmode .vd{color:#92400e}
  .vb .vt{font-weight:600;display:block} .vb .vd{display:block;font-size:12px;color:var(--alt);font-weight:600}
  .vb .vx{display:block;font-size:12.5px;color:#3b4553}
- .st.alt b{color:var(--alt)} .st.gm .nm::after{content:'rerouted' !important} .st.alt .nm::after{content:'alternative';margin-left:6px;font-size:10.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--alt)}
+ .st.alt b{color:var(--alt)} .st.alt .nm::after,.st.gm .nm::after{margin-left:6px;font-size:10.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase} .st.gm .nm::after{content:'gravel reroute';color:#92400e} .st.alt .nm::after{content:'alternative';color:var(--alt)} .st.alt.gm .nm::after{content:'alternative · gravel reroute';color:var(--alt)}
 </style></head><body>
 <div id="wrap"><div id="side"><h1>Oslo – Lindesnes – Nordkapp</h1><p class="sub" id="sum"></p>
 <div class="legend" role="group" aria-label="Show or hide markers">
@@ -88,22 +88,27 @@ base['Topographic'].addTo(map);L.control.layers(base,null,{position:'topright'})
 const list=document.getElementById('list'),vlist=document.getElementById('vlist');
 const all=L.featureGroup().addTo(map),ghost=L.featureGroup().addTo(map);
 const pins={r:L.layerGroup().addTo(map),d:L.layerGroup().addTo(map),h:L.layerGroup().addTo(map)},tid={r:'tR',d:'tD',h:'tH'};
-const active=new Set();
-try{(location.hash.match(/v=([\w,]+)/)||[,''])[1].split(',').forEach(id=>{if(D.variants.some(v=>v.id===id))active.add(id)})}catch(e){}
+const active=new Set();let gravel=false;
+try{const h=location.hash;(h.match(/v=([\w,]+)/)||[,''])[1].split(',').forEach(id=>{if(id==='gravel')gravel=true;else if(D.variants.some(v=>v.id===id))active.add(id)});if(/[#&]g=1/.test(h))gravel=true}catch(e){}
 const partOf=n=>D.parts.find(p=>n>=p[0]&&n<=p[1]);
 const overlaps=(a,b)=>a.first<=b.last&&b.first<=a.last;
-function sequence(){const out=[];let i=1;
-  while(i<=D.main.length){const v=D.variants.find(v=>active.has(v.id)&&v.first===i);
-    if(v){v.stages.forEach(s=>out.push({s,alt:v.whole?(s.chg?v:null):v,gm:!!v.whole,part:v.whole?D.parts[s.p]:partOf(v.first)}));i=v.last+1}
-    else{out.push({s:D.main[i-1],alt:null,part:partOf(i)});i++}}
+const eff=(s,g)=>g&&s.g?Object.assign({},s,s.g,{gm:1}):s;
+function sequence(act=active,g=gravel){const out=[];let i=1;const B=D.gblock;
+  const blockOK=g&&!D.variants.some(v=>act.has(v.id)&&v.first<=B.last&&B.first<=v.last);
+  while(i<=D.main.length){const v=D.variants.find(v=>act.has(v.id)&&v.first===i);
+    if(v){v.stages.forEach(s=>out.push({s:eff(s,g),alt:v,part:partOf(v.first)}));i=v.last+1}
+    else if(blockOK&&i===B.first){B.stages.forEach(s=>out.push({s:Object.assign({gm:1},s),alt:null,part:partOf(i)}));i=B.last+1}
+    else{out.push({s:eff(D.main[i-1],g),alt:null,part:partOf(i)});i++}}
   return out}
+const tot=q=>({n:q.length,km:q.reduce((a,x)=>a+x.s.km,0),asc:q.reduce((a,x)=>a+x.s.asc,0),unp:q.reduce((a,x)=>a+x.s.unp,0)});
+const days=n=>`${sgn(n)} day${Math.abs(n)===1?'':'s'}`;
 function pin(k,ll,title,popup){const mk=L.marker(ll,{icon:L.divIcon({className:'pin '+k,html:'<i></i>',iconSize:[15,15],iconAnchor:[7,7]}),title,riseOnHover:true});mk.bindPopup(popup,{maxWidth:260});mk.addTo(pins[k]);return mk}
 function showPin(k,ll,mk){if(!map.hasLayer(pins[k]))document.getElementById(tid[k]).click();map.setView(ll,Math.max(map.getZoom(),11));mk.openPopup()}
 let open=null;
 function render(){
   all.clearLayers();ghost.clearLayers();Object.values(pins).forEach(p=>p.clearLayers());list.innerHTML='';open=null;
   const seq=sequence();let lastPart=null;
-  seq.forEach((it,idx)=>{const s=it.s,n=idx+1,color=it.alt&&!it.gm?ALT:it.part[3];
+  seq.forEach((it,idx)=>{const s=it.s,n=idx+1,color=it.alt?ALT:it.part[3];
     const g=L.featureGroup();
     s.segs.forEach(x=>{if(x.g){L.polyline(x.c,{color:'#1f2937',weight:7,opacity:.95,lineCap:'butt'}).addTo(g);L.polyline(x.c,{color:'#fbbf24',weight:4,dashArray:'7 5',lineCap:'butt'}).addTo(g)}
       else L.polyline(x.c,x.f?{color:'#475569',weight:2,dashArray:'5 6'}:{color,weight:4,opacity:.9}).addTo(g)});
@@ -111,7 +116,7 @@ function render(){
     g.bindTooltip(`${n}. ${s.name} · ${s.km} km · +${s.asc} m${s.unp?` · ${s.unp} km gravel`:''}`,{sticky:true});g.addTo(all);
     if(it.part!==lastPart){lastPart=it.part;const h=document.createElement('div');h.className='part';h.style.background=it.part[3];h.textContent=it.part[2];list.appendChild(h)}
     const nd=s.lm.filter(l=>l.k==='d').length,nr=s.lm.length-nd;
-    const btn=document.createElement('button');btn.className='st'+(it.alt?' alt':'')+(it.alt&&it.gm?' gm':'');btn.type='button';btn.setAttribute('aria-expanded','false');
+    const btn=document.createElement('button');btn.className='st'+(it.alt?' alt':'')+(s.gm?' gm':'');btn.type='button';btn.setAttribute('aria-expanded','false');
     btn.innerHTML=`<b>${n}</b><span class="nm">${esc(s.name)}<span class="cnt">${nr} landmark${nr===1?'':'s'}${nd?` · ${nd} detour${nd===1?'':'s'}`:''}${s.huts.length?` · ${s.huts.length} cabin${s.huts.length===1?'':'s'}`:''}${s.unp?` · ${s.unp} km gravel`:''}</span></span><span class="num">${s.km} km<br>+${s.asc} m</span><span class="chev"></span>`;
     const panel=document.createElement('div');panel.className='panel';panel.hidden=true;
     const label=`<span class="s">Stage ${n} · ${esc(s.name)}</span>`;
@@ -136,25 +141,31 @@ function render(){
     g.on('click',()=>{if(btn.getAttribute('aria-expanded')!=='true')btn.click();btn.scrollIntoView({block:'start',behavior:'smooth'})});
     list.appendChild(btn);list.appendChild(panel)});
   // alternatives that are switched off: faint dashed line, click to switch on
-  D.variants.filter(v=>!active.has(v.id)&&!v.whole).forEach(v=>{const g=L.featureGroup();
-    v.stages.forEach(s=>s.segs.forEach(x=>{if(!x.f)L.polyline(x.c,{color:ALT,weight:3,opacity:.55,dashArray:'2 7'}).addTo(g)}));
-    g.bindTooltip(`Alternative: ${v.title} (${sgn(v.dkm,'km')}, ${sgn(v.ddays)} day${Math.abs(v.ddays)===1?'':'s'}). Click to switch on.`,{sticky:true});
+  const base=tot(sequence(new Set(),gravel));D.variants.forEach(v=>{const t=tot(sequence(new Set([v.id]),gravel));v._d={km:t.km-base.km,asc:t.asc-base.asc,unp:t.unp-base.unp,n:t.n-base.n};
+    const repl=v.first===v.last?`stage ${v.first}`:`stages ${v.first}–${v.last}`;
+    document.querySelector(`.vb[data-id=${v.id}] .vd`).textContent=`${sgn(v._d.km,'km')} · ${sgn(v._d.asc,'m')} · ${days(v._d.n)}${gravel?` · ${sgn(v._d.unp,'km')} gravel`:''} · replaces ${repl}`});
+  {const a=tot(sequence(active,true)),b=tot(sequence(active,false));document.querySelector('#gmode .vd').textContent=`${sgn(a.unp-b.unp,'km')} gravel · ${sgn(a.km-b.km,'km')} · ${sgn(a.asc-b.asc,'m')} · ${days(a.n-b.n)}`}
+  D.variants.filter(v=>!active.has(v.id)).forEach(v=>{const g=L.featureGroup();
+    v.stages.forEach(s=>eff(s,gravel).segs.forEach(x=>{if(!x.f)L.polyline(x.c,{color:ALT,weight:3,opacity:.55,dashArray:'2 7'}).addTo(g)}));
+    g.bindTooltip(`Alternative: ${v.title} (${sgn(v._d.km,'km')}, ${days(v._d.n)}). Click to switch on.`,{sticky:true});
     g.on('click',()=>setVariant(v.id,true));g.addTo(ghost)});
   const km=seq.reduce((a,x)=>a+x.s.km,0),asc=seq.reduce((a,x)=>a+x.s.asc,0);
   document.getElementById('sum').textContent=`${seq.length} stages · ${fmt(km)} km · ${fmt(asc)} m climbing · ${seq.reduce((a,x)=>a+x.s.lm.length,0)} landmarks and detours · ${seq.reduce((a,x)=>a+x.s.huts.length,0)} backup cabins · ${fmt(seq.reduce((a,x)=>a+x.s.unp,0))} km gravel. Click a day to open it.`;
-  document.querySelectorAll('.vb').forEach(b=>b.setAttribute('aria-pressed',active.has(b.dataset.id)));
-  try{history.replaceState(null,'',active.size?'#v='+[...active].join(','):location.pathname+location.search)}catch(e){}
+  document.querySelectorAll('.vb').forEach(b=>b.setAttribute('aria-pressed',b.dataset.id==='gravel'?gravel:active.has(b.dataset.id)));
+  try{const h=[active.size?'v='+[...active].join(','):'',gravel?'g=1':''].filter(Boolean).join('&');history.replaceState(null,'',h?'#'+h:location.pathname+location.search)}catch(e){}
 }
 function setVariant(id,on){const v=D.variants.find(v=>v.id===id);
   if(on){D.variants.forEach(o=>{if(o!==v&&active.has(o.id)&&overlaps(o,v))active.delete(o.id)});active.add(id)}else active.delete(id);
   render();
-  const b=L.latLngBounds([]);(on?v.stages:D.main.slice(v.first-1,v.last)).forEach(s=>s.segs.forEach(x=>b.extend(x.c)));
+  const b=L.latLngBounds([]);(on?v.stages:D.main.slice(v.first-1,v.last)).forEach(s=>eff(s,gravel).segs.forEach(x=>b.extend(x.c)));
   map.fitBounds(b,{padding:[40,40]})}
 D.variants.forEach(v=>{const b=document.createElement('button');b.type='button';b.className='vb';b.dataset.id=v.id;b.setAttribute('aria-pressed','false');
   const repl=v.first===v.last?`stage ${v.first}`:`stages ${v.first}–${v.last}`;
-  b.innerHTML=`<span class="sw"></span><span><span class="vt">${esc(v.title)}</span><span class="vd">${sgn(v.dkm,'km')} · ${sgn(v.dasc,'m')} · ${sgn(v.ddays)} day${Math.abs(v.ddays)===1?'':'s'} · replaces ${repl}</span><span class="vx">${esc(v.blurb)}</span></span>`;
-  if(v.whole)b.innerHTML=`<span class="sw"></span><span><span class="vt">${esc(v.title)}</span><span class="vd">${sgn(v.dunp,'km')} gravel · ${sgn(v.dkm,'km')} · ${sgn(v.dasc,'m')} · ${sgn(v.ddays)} day${Math.abs(v.ddays)===1?'':'s'}</span><span class="vx">${esc(v.blurb)} Cannot be combined with the alternative routes.</span></span>`;
-  b.onclick=()=>setVariant(v.id,!active.has(v.id));(v.whole?document.getElementById('gmode'):vlist).appendChild(b)});
+  b.innerHTML=`<span class="sw"></span><span><span class="vt">${esc(v.title)}</span><span class="vd"></span><span class="vx">${esc(v.blurb)}</span></span>`;
+  b.onclick=()=>setVariant(v.id,!active.has(v.id));vlist.appendChild(b)});
+{const b=document.createElement('button');b.type='button';b.className='vb';b.dataset.id='gravel';b.setAttribute('aria-pressed','false');
+  b.innerHTML=`<span class="sw"></span><span><span class="vt">Gravel mode</span><span class="vd"></span><span class="vx">Moves the route onto gravel roads wherever that makes sense, including any alternative routes you have switched on.</span></span>`;
+  b.onclick=()=>{gravel=!gravel;render()};document.getElementById('gmode').appendChild(b)}
 document.getElementById('tR').onchange=e=>e.target.checked?pins.r.addTo(map):pins.r.remove();
 document.getElementById('tD').onchange=e=>e.target.checked?pins.d.addTo(map):pins.d.remove();
 document.getElementById('tH').onchange=e=>e.target.checked?pins.h.addTo(map):pins.h.remove();

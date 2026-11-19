@@ -437,35 +437,35 @@ Out and back from Olderfjord on the national tourist route to the fishing villag
 
 - **Porsangerfjorden** (on the route). The road hugs the shore under layered slate cliffs. Reindeer on the beach are common.
 
-### Gravel mode
+## Gravel mode
 
-The whole route from Oslo to Nordkapp, moved onto gravel roads wherever that makes sense. The biggest change is four days on mountain gravel roads east of Jotunheimen.
+A switch on the map that moves the route onto gravel roads wherever that makes sense. It also applies to any alternative route that is switched on.
 
-Compared with the main route: +177 km gravel, +13 km, +1200 m climbing, +1 day. It is a separate button on the map and cannot be combined with the variants above.
+With no alternative switched on: 449 km gravel instead of 272 km, +13 km, +1200 m climbing, +1 day. GPX in [variants/gravel.gpx](variants/gravel.gpx).
 
-- Each leg is re-routed onto gravel only where that adds at least 3 km of gravel for at most 15 % more distance, without new hiking paths or boats. Elsewhere the track is the main route.
-- Between Tyin and Dombås the track leaves the main route for four days on mountain gravel roads: Slettefjellvegen, Jotunheimvegen, Murudalen and Slådalsvegen. You lose Tindevegen, Sognefjellet and Lom.
+- Each leg is re-routed onto gravel only where that adds at least 3 km of gravel for at most 15 % more distance, without new hiking paths or boats. Elsewhere the track is unchanged.
+- Between Tyin and Dombås the track leaves the main route for four days on mountain gravel roads: Slettefjellvegen, Jotunheimvegen, Murudalen and Slådalsvegen. You lose Tindevegen, Sognefjellet and Lom. With the Nigardsbreen or Geiranger variant switched on these four days are not used, because those variants need Sognefjellet or Lom.
+- Gravel mode works together with the alternative routes. Each of them has its own gravel version.
 - Jotunheimvegen, Slettefjellvegen and Slådalsvegen are summer toll roads and normally open in late June. Check before leaving.
 - Gravel days are slower. Count on 15 to 25 % less distance per hour than on asphalt.
 - Surfaces come from OpenStreetMap tags and are not checked on the ground. Forest roads can be rough or gated.
-- North of Namsos there is almost no through gravel, so the track is the same as the main route.
 
-Stages that differ from the main route:
+Main route stages that change in gravel mode:
 
-| Stage | km | Climb m | Gravel km | Main route gravel km |
+| Stage | km | Climb m | Gravel km | Without gravel mode |
 |---|--:|--:|--:|--:|
-| 3. Kragerø – Arendal | 83 | 780 | 3 | 0 |
-| 4. Arendal – Mandal | 123 | 740 | 10 | 3 |
-| 9. Haukeligrend – Røldal | 57 | 760 | 4 | 0 |
-| 15. Tyinkrysset – Beitostølen (Slettefjell) | 55 | 1170 | 29 | new |
-| 16. Beitostølen – Skåbu (Jotunheimvegen) | 76 | 880 | 53 | new |
-| 17. Skåbu – Vågåmo (Murudalen) | 69 | 770 | 44 | new |
-| 18. Vågåmo – Dombås (Slådalsvegen) | 48 | 1050 | 28 | new |
-| 19. Dombås – Berkåk (Dovrefjell) | 128 | 1250 | 27 | 24 |
-| 22. Steinkjer – Namsos | 98 | 1010 | 29 | 1 |
-| 23. Namsos – Foldereid | 105 | 1000 | 5 | 1 |
-| 24. Foldereid – Brønnøysund | 95 | 360 | 6 | 0 |
-| 32. Sortland – Andenes | 112 | 250 | 11 | 0 |
+| 3. Kragerø – Arendal | 83 | 780 | 3 | 81 km, 0 km gravel |
+| 4. Arendal – Mandal | 123 | 740 | 10 | 125 km, 3 km gravel |
+| 9. Haukeligrend – Røldal | 57 | 760 | 4 | 57 km, 0 km gravel |
+| Tyinkrysset – Beitostølen (Slettefjell) | 55 | 1170 | 29 | new, replaces stages 15–17 |
+| Beitostølen – Skåbu (Jotunheimvegen) | 76 | 880 | 53 | new, replaces stages 15–17 |
+| Skåbu – Vågåmo (Murudalen) | 69 | 770 | 44 | new, replaces stages 15–17 |
+| Vågåmo – Dombås (Slådalsvegen) | 48 | 1050 | 28 | new, replaces stages 15–17 |
+| 18. Dombås – Berkåk (Dovrefjell) | 128 | 1250 | 27 | 123 km, 24 km gravel |
+| 21. Steinkjer – Namsos | 98 | 1010 | 29 | 92 km, 1 km gravel |
+| 22. Namsos – Foldereid | 105 | 1000 | 5 | 105 km, 1 km gravel |
+| 23. Foldereid – Brønnøysund | 95 | 360 | 6 | 91 km, 0 km gravel |
+| 31. Sortland – Andenes | 112 | 250 | 11 | 109 km, 0 km gravel |
 
 **Tyinkrysset – Beitostølen (Slettefjell)**
 
@@ -495,9 +495,21 @@ Backup cabins on the new stages:
 
 | Stage | Cabin | Type | Off track km | Altitude m | Beds | DNT key | Run by |
 |---|---|---|--:|--:|--:|:-:|---|
+| Tyinkrysset – Beitostølen (Slettefjell) | [Tyinkrysset fjellstue](https://ut.no/hytte/tyinkrysset-fjellstue) | Staffed lodge | 0.1 | 874 | 45 |  |  |
+| Tyinkrysset – Beitostølen (Slettefjell) | [Filefjellstuene](https://www.filefjellstuene.no/) | Staffed lodge | 0.8 | 940 | 140 |  |  |
 | Beitostølen – Skåbu (Jotunheimvegen) | [Bygdin Høyfjellshotell](https://ut.no/hytte/bygdin-hoeyfjellhotell) | Staffed lodge | 0.1 | 1065 | 80 |  |  |
 | Beitostølen – Skåbu (Jotunheimvegen) | [Haugseter fjellstue](https://ut.no/hytte/haugseter-fjellstue-a-s) | Staffed lodge | 0.1 | 1044 | 60 |  |  |
 | Beitostølen – Skåbu (Jotunheimvegen) | [Oskampen](https://ut.no/hytte/oskampen) | Self-service cabin | 1.9 | 1175 | 12 | yes | DNT Oslo og Omegn |
+
+Alternative routes in gravel mode:
+
+| Variant | Gravel km | Gravel km in gravel mode | Distance change | Stages rerouted | GPX |
+|---|--:|--:|--:|--:|---|
+| The coast to Trondheim | 57 | 85 | +10 km | 4 | [variants/coast-gravel.gpx](variants/coast-gravel.gpx) |
+| Lysefjord and the North Sea Road | 28 | 44 | +3 km | 3 | [variants/lysefjord-gravel.gpx](variants/lysefjord-gravel.gpx) |
+| Nigardsbreen and Jostedalen | 8 | 12 | +1 km | 1 | [variants/nigardsbreen-gravel.gpx](variants/nigardsbreen-gravel.gpx) |
+| Geiranger, Trollstigen and the Atlantic Road | 54 | 76 | +1 km | 2 | [variants/geiranger-gravel.gpx](variants/geiranger-gravel.gpx) |
+| Havøysund | 0 | 0 | ±0 km | 0 | same track |
 
 <!-- VARIANTS:END -->
 

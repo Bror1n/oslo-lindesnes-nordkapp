@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx version="1.1" creator="rute/tools/build.py (BRouter, OpenStreetMap data)" xmlns="http://www.topografix.com/GPX/1/1">
-<metadata><name>Gravel mode</name></metadata>
+<metadata><name>Oslo – Lindesnes – Nordkapp, gravel mode</name></metadata>
 <trk><name>01 Oslo – Tønsberg</name>
 <trkseg>
 <trkpt lat="59.91222" lon="10.73383"><ele>10</ele></trkpt>
