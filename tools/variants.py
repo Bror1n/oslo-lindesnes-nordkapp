@@ -60,4 +60,23 @@ VARIANTS=[
    ("Olderfjord – Repvåg", ["Repvåg"]),
   ]},
 ]
+# Gravel mode: the whole main route, with the Jotunheimen gravel roads in place of stages 15-17,
+# and every other leg re-routed on gravel where route.pick_gravel accepts it.
+from stages import STAGES as _S
+_i=[n for n,_ in _S].index("Tyinkrysset – Turtagrø (Tindevegen)")
+VARIANTS.append({"id":"gravel","gravel":True,"title":"Gravel mode",
+  "notes":['Each leg is re-routed onto gravel only where that adds at least 3 km of gravel for at most 15 % more distance, without new hiking paths or boats. Elsewhere the track is the main route.',
+   'Between Tyin and Dombås the track leaves the main route for four days on mountain gravel roads: Slettefjellvegen, Jotunheimvegen, Murudalen and Slådalsvegen. You lose Tindevegen, Sognefjellet and Lom.',
+   'Jotunheimvegen, Slettefjellvegen and Slådalsvegen are summer toll roads and normally open in late June. Check before leaving.',
+   'Gravel days are slower. Count on 15 to 25 % less distance per hour than on asphalt.',
+   'Surfaces come from OpenStreetMap tags and are not checked on the ground. Forest roads can be rough or gated.',
+   'North of Namsos there is almost no through gravel, so the track is the same as the main route.'],
+  "blurb":"The whole route from Oslo to Nordkapp, moved onto gravel roads wherever that makes sense. The biggest change is four days on mountain gravel roads east of Jotunheimen.",
+  "first":_S[0][0],"last":_S[-1][0],"start":None,
+  "stages":_S[:_i]+[
+   ("Tyinkrysset – Beitostølen (Slettefjell)", ["Beitostølen"]),
+   ("Beitostølen – Skåbu (Jotunheimvegen)", ["Bygdisheim","Skåbu"]),
+   ("Skåbu – Vågåmo (Murudalen)", ["Randsverk","Vågåmo"]),
+   ("Vågåmo – Dombås (Slådalsvegen)", ["Dombås"]),
+  ]+_S[_i+3:]})
 V_FERRIES=[("Lauvvik ferjekai","Lysebotn"),("Eidsdal","Linge ferjekai"),("Vestnes ferjekai","Molde ferjekai"),("Kanestraum","Halsa ferjekai"),("Lærdalsøyri","Sogndal")]

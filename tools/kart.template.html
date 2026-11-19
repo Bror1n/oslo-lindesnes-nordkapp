@@ -58,9 +58,10 @@
  .vb .sw{flex:none;width:30px;height:18px;border-radius:9px;background:#c5ccd6;position:relative;margin-top:2px;transition:background .15s}
  .vb .sw::after{content:'';position:absolute;left:2px;top:2px;width:14px;height:14px;border-radius:50%;background:#fff;transition:left .15s}
  .vb[aria-pressed=true]{background:#f3effe} .vb[aria-pressed=true] .sw{background:var(--alt)} .vb[aria-pressed=true] .sw::after{left:14px}
+ #gmode{margin:0 14px 12px;border:1px solid #1f2937;border-radius:10px;background:#fff;overflow:hidden} #gmode .vb[aria-pressed=true]{background:#fef6dc} #gmode .vb[aria-pressed=true] .sw{background:#1f2937} #gmode .vd{color:#92400e}
  .vb .vt{font-weight:600;display:block} .vb .vd{display:block;font-size:12px;color:var(--alt);font-weight:600}
  .vb .vx{display:block;font-size:12.5px;color:#3b4553}
- .st.alt b{color:var(--alt)} .st.alt .nm::after{content:'alternative';margin-left:6px;font-size:10.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--alt)}
+ .st.alt b{color:var(--alt)} .st.gm .nm::after{content:'rerouted' !important} .st.alt .nm::after{content:'alternative';margin-left:6px;font-size:10.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--alt)}
 </style></head><body>
 <div id="wrap"><div id="side"><h1>Oslo – Lindesnes – Nordkapp</h1><p class="sub" id="sum"></p>
 <div class="legend" role="group" aria-label="Show or hide markers">
@@ -71,6 +72,7 @@
 <p class="key"><span><svg width="34" height="10" aria-hidden="true"><line x1="0" y1="5" x2="34" y2="5" stroke="#15803d" stroke-width="4"/></svg>Paved</span>
  <span><svg width="34" height="10" aria-hidden="true"><line x1="0" y1="5" x2="34" y2="5" stroke="#1f2937" stroke-width="7"/><line x1="0" y1="5" x2="34" y2="5" stroke="#fbbf24" stroke-width="4" stroke-dasharray="7 5"/></svg>Gravel</span>
  <span><svg width="34" height="10" aria-hidden="true"><line x1="0" y1="5" x2="34" y2="5" stroke="#475569" stroke-width="2" stroke-dasharray="5 6"/></svg>Ferry or bus</span></p>
+<div id="gmode"></div>
 <div class="opts"><h2>Alternative routes</h2><div id="vlist"></div></div>
 <div id="list"></div></div><div id="map"></div></div>
 <script>
@@ -92,7 +94,7 @@ const partOf=n=>D.parts.find(p=>n>=p[0]&&n<=p[1]);
 const overlaps=(a,b)=>a.first<=b.last&&b.first<=a.last;
 function sequence(){const out=[];let i=1;
   while(i<=D.main.length){const v=D.variants.find(v=>active.has(v.id)&&v.first===i);
-    if(v){v.stages.forEach(s=>out.push({s,alt:v,part:partOf(v.first)}));i=v.last+1}
+    if(v){v.stages.forEach(s=>out.push({s,alt:v.whole?(s.chg?v:null):v,gm:!!v.whole,part:v.whole?D.parts[s.p]:partOf(v.first)}));i=v.last+1}
     else{out.push({s:D.main[i-1],alt:null,part:partOf(i)});i++}}
   return out}
 function pin(k,ll,title,popup){const mk=L.marker(ll,{icon:L.divIcon({className:'pin '+k,html:'<i></i>',iconSize:[15,15],iconAnchor:[7,7]}),title,riseOnHover:true});mk.bindPopup(popup,{maxWidth:260});mk.addTo(pins[k]);return mk}
@@ -101,7 +103,7 @@ let open=null;
 function render(){
   all.clearLayers();ghost.clearLayers();Object.values(pins).forEach(p=>p.clearLayers());list.innerHTML='';open=null;
   const seq=sequence();let lastPart=null;
-  seq.forEach((it,idx)=>{const s=it.s,n=idx+1,color=it.alt?ALT:it.part[3];
+  seq.forEach((it,idx)=>{const s=it.s,n=idx+1,color=it.alt&&!it.gm?ALT:it.part[3];
     const g=L.featureGroup();
     s.segs.forEach(x=>{if(x.g){L.polyline(x.c,{color:'#1f2937',weight:7,opacity:.95,lineCap:'butt'}).addTo(g);L.polyline(x.c,{color:'#fbbf24',weight:4,dashArray:'7 5',lineCap:'butt'}).addTo(g)}
       else L.polyline(x.c,x.f?{color:'#475569',weight:2,dashArray:'5 6'}:{color,weight:4,opacity:.9}).addTo(g)});
@@ -109,7 +111,7 @@ function render(){
     g.bindTooltip(`${n}. ${s.name} · ${s.km} km · +${s.asc} m${s.unp?` · ${s.unp} km gravel`:''}`,{sticky:true});g.addTo(all);
     if(it.part!==lastPart){lastPart=it.part;const h=document.createElement('div');h.className='part';h.style.background=it.part[3];h.textContent=it.part[2];list.appendChild(h)}
     const nd=s.lm.filter(l=>l.k==='d').length,nr=s.lm.length-nd;
-    const btn=document.createElement('button');btn.className='st'+(it.alt?' alt':'');btn.type='button';btn.setAttribute('aria-expanded','false');
+    const btn=document.createElement('button');btn.className='st'+(it.alt?' alt':'')+(it.alt&&it.gm?' gm':'');btn.type='button';btn.setAttribute('aria-expanded','false');
     btn.innerHTML=`<b>${n}</b><span class="nm">${esc(s.name)}<span class="cnt">${nr} landmark${nr===1?'':'s'}${nd?` · ${nd} detour${nd===1?'':'s'}`:''}${s.huts.length?` · ${s.huts.length} cabin${s.huts.length===1?'':'s'}`:''}${s.unp?` · ${s.unp} km gravel`:''}</span></span><span class="num">${s.km} km<br>+${s.asc} m</span><span class="chev"></span>`;
     const panel=document.createElement('div');panel.className='panel';panel.hidden=true;
     const label=`<span class="s">Stage ${n} · ${esc(s.name)}</span>`;
@@ -134,12 +136,12 @@ function render(){
     g.on('click',()=>{if(btn.getAttribute('aria-expanded')!=='true')btn.click();btn.scrollIntoView({block:'start',behavior:'smooth'})});
     list.appendChild(btn);list.appendChild(panel)});
   // alternatives that are switched off: faint dashed line, click to switch on
-  D.variants.filter(v=>!active.has(v.id)).forEach(v=>{const g=L.featureGroup();
+  D.variants.filter(v=>!active.has(v.id)&&!v.whole).forEach(v=>{const g=L.featureGroup();
     v.stages.forEach(s=>s.segs.forEach(x=>{if(!x.f)L.polyline(x.c,{color:ALT,weight:3,opacity:.55,dashArray:'2 7'}).addTo(g)}));
     g.bindTooltip(`Alternative: ${v.title} (${sgn(v.dkm,'km')}, ${sgn(v.ddays)} day${Math.abs(v.ddays)===1?'':'s'}). Click to switch on.`,{sticky:true});
     g.on('click',()=>setVariant(v.id,true));g.addTo(ghost)});
   const km=seq.reduce((a,x)=>a+x.s.km,0),asc=seq.reduce((a,x)=>a+x.s.asc,0);
-  document.getElementById('sum').textContent=`${seq.length} stages · ${fmt(km)} km · ${fmt(asc)} m climbing · ${seq.reduce((a,x)=>a+x.s.lm.length,0)} landmarks and detours · ${seq.reduce((a,x)=>a+x.s.huts.length,0)} backup cabins. Click a day to open it.`;
+  document.getElementById('sum').textContent=`${seq.length} stages · ${fmt(km)} km · ${fmt(asc)} m climbing · ${seq.reduce((a,x)=>a+x.s.lm.length,0)} landmarks and detours · ${seq.reduce((a,x)=>a+x.s.huts.length,0)} backup cabins · ${fmt(seq.reduce((a,x)=>a+x.s.unp,0))} km gravel. Click a day to open it.`;
   document.querySelectorAll('.vb').forEach(b=>b.setAttribute('aria-pressed',active.has(b.dataset.id)));
   try{history.replaceState(null,'',active.size?'#v='+[...active].join(','):location.pathname+location.search)}catch(e){}
 }
@@ -151,7 +153,8 @@ function setVariant(id,on){const v=D.variants.find(v=>v.id===id);
 D.variants.forEach(v=>{const b=document.createElement('button');b.type='button';b.className='vb';b.dataset.id=v.id;b.setAttribute('aria-pressed','false');
   const repl=v.first===v.last?`stage ${v.first}`:`stages ${v.first}–${v.last}`;
   b.innerHTML=`<span class="sw"></span><span><span class="vt">${esc(v.title)}</span><span class="vd">${sgn(v.dkm,'km')} · ${sgn(v.dasc,'m')} · ${sgn(v.ddays)} day${Math.abs(v.ddays)===1?'':'s'} · replaces ${repl}</span><span class="vx">${esc(v.blurb)}</span></span>`;
-  b.onclick=()=>setVariant(v.id,!active.has(v.id));vlist.appendChild(b)});
+  if(v.whole)b.innerHTML=`<span class="sw"></span><span><span class="vt">${esc(v.title)}</span><span class="vd">${sgn(v.dunp,'km')} gravel · ${sgn(v.dkm,'km')} · ${sgn(v.dasc,'m')} · ${sgn(v.ddays)} day${Math.abs(v.ddays)===1?'':'s'}</span><span class="vx">${esc(v.blurb)} Cannot be combined with the alternative routes.</span></span>`;
+  b.onclick=()=>setVariant(v.id,!active.has(v.id));(v.whole?document.getElementById('gmode'):vlist).appendChild(b)});
 document.getElementById('tR').onchange=e=>e.target.checked?pins.r.addTo(map):pins.r.remove();
 document.getElementById('tD').onchange=e=>e.target.checked?pins.d.addTo(map):pins.d.remove();
 document.getElementById('tH').onchange=e=>e.target.checked?pins.h.addTo(map):pins.h.remove();

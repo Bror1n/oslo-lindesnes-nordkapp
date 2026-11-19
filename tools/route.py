@@ -56,7 +56,15 @@ def brouter(a,b,prof="trekking"):
         else: break
     if r["ok"]: segc[key]=r; json.dump(segc,open(cache_p,"w"))
     time.sleep(1.5); return r
-def route_stages(STAGES,prev=None):
+def pick_gravel(a,b,r,prof):
+    """gravel mode: use the router's gravel profile for this leg only where it adds real gravel at a fair price"""
+    g=brouter(a,b,"gravel")
+    if not g["ok"]: return r,None
+    gain=(g["unpaved_m"]-r["unpaved_m"])/1000; rk=(r["len"]-r["ferry_m"])/1000; gk=(g["len"]-g["ferry_m"])/1000
+    ok=(gain>=3 and gk<=rk*1.15+3 and ascent(g["coords"])<=ascent(r["coords"])*1.4+150
+        and g["path_m"]<=r["path_m"]+500 and abs(g["ferry_m"]-r["ferry_m"])<=500)
+    return (g,gain) if ok else (r,None)
+def route_stages(STAGES,prev=None,gravel=False):
     out=[]
     for name,pts in STAGES:
         chain=([prev] if prev and prev!=pts[0] else [])+pts
@@ -69,6 +77,9 @@ def route_stages(STAGES,prev=None):
                 st["segs"].append({"ferry":True,"coords":[[A['lon'],A['lat']],[B['lon'],B['lat']]]}); st["ferries"].append(f"{a} – {b}"); continue
             r=brouter(a,b,prof)
             if not r["ok"]: print("FAIL",name,":",a,"->",b,r["err"]); continue
+            if gravel:
+                r,gain=pick_gravel(a,b,r,prof)
+                if gain: print(f"   GRAVEL +{gain:.1f} km on {a} -> {b}")
             d=hav((geo[a]['lon'],geo[a]['lat']),(geo[b]['lon'],geo[b]['lat']))
             ride=(r["len"]-r["ferry_m"])/1000; asc=ascent(r["coords"])
             notes=[]
@@ -109,7 +120,7 @@ if __name__=="__main__":
         res={}
         for v in VARIANTS:
             print("=== VARIANT",v["id"],flush=True)
-            res[v["id"]]=route_stages(v["stages"],v["start"])
+            res[v["id"]]=route_stages(v["stages"],v["start"],v.get("gravel",False))
             print("   variant total",round(sum(s["km"] for s in res[v["id"]])),"km",round(sum(s["asc"] for s in res[v["id"]])),"m",flush=True)
         json.dump(res,open(os.path.join(HERE,'routed_variants.json'),"w"))
     else:

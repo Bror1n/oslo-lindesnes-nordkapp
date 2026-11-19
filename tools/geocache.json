@@ -1612,5 +1612,59 @@
   "lon": 4.8789988,
   "display": "Kalvåg, Bremanger, Vestland, 6729, Norge",
   "type": "village"
+ },
+ "Grindaheim": {
+  "lat": 61.124728,
+  "lon": 8.5769148,
+  "display": "Grindaheim, Ellingbøgrende, Vang, Innlandet, 2975, Norge",
+  "type": "quarter"
+ },
+ "Beitostølen": {
+  "lat": 61.2487161,
+  "lon": 8.9062594,
+  "display": "Beitostølen, Øystre Slidre, Innlandet, 2953, Norge",
+  "type": "village"
+ },
+ "Skåbu": {
+  "lat": 61.5255674,
+  "lon": 9.4093793,
+  "display": "Skåbu, Nord-Fron, Innlandet, 2643, Norge",
+  "type": "village"
+ },
+ "Randsverk": {
+  "lat": 61.7275594,
+  "lon": 9.0680488,
+  "display": "Randsverk, Vågå, Innlandet, 2683, Norge",
+  "type": "quarter"
+ },
+ "Lesja": {
+  "lat": 62.1183499,
+  "lon": 8.8639467,
+  "display": "Lesja, Innlandet, 2665, Norge",
+  "type": "village"
+ },
+ "Bygdin Høyfjellshotell": {
+  "lat": 61.3276988,
+  "lon": 8.7987903,
+  "display": "Bygdin Høyfjellshotell, 51, Bygdin, Vang, Innlandet, Norge",
+  "type": "alpine_hut"
+ },
+ "Bygdisheim": {
+  "lat": 61.3273262,
+  "lon": 8.7547685,
+  "display": "Bygdisheim, Vang, Innlandet, Norge",
+  "type": "farm"
+ },
+ "Haugseter Fjellstue": {
+  "lat": 61.3423678,
+  "lon": 8.983951,
+  "display": "Haugseter fjellstue, Røsstøladn, Øystre Slidre, Innlandet, Norge",
+  "type": "alpine_hut"
+ },
+ "Lemonsjøen": {
+  "lat": 61.7756647,
+  "lon": 9.0709179,
+  "display": "Lemonsjøen, Vågå, Innlandet, Norge",
+  "type": "water"
  }
 }

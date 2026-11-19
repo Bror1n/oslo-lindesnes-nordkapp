@@ -437,6 +437,68 @@ Out and back from Olderfjord on the national tourist route to the fishing villag
 
 - **Porsangerfjorden** (on the route). The road hugs the shore under layered slate cliffs. Reindeer on the beach are common.
 
+### Gravel mode
+
+The whole route from Oslo to Nordkapp, moved onto gravel roads wherever that makes sense. The biggest change is four days on mountain gravel roads east of Jotunheimen.
+
+Compared with the main route: +177 km gravel, +13 km, +1200 m climbing, +1 day. It is a separate button on the map and cannot be combined with the variants above.
+
+- Each leg is re-routed onto gravel only where that adds at least 3 km of gravel for at most 15 % more distance, without new hiking paths or boats. Elsewhere the track is the main route.
+- Between Tyin and Dombås the track leaves the main route for four days on mountain gravel roads: Slettefjellvegen, Jotunheimvegen, Murudalen and Slådalsvegen. You lose Tindevegen, Sognefjellet and Lom.
+- Jotunheimvegen, Slettefjellvegen and Slådalsvegen are summer toll roads and normally open in late June. Check before leaving.
+- Gravel days are slower. Count on 15 to 25 % less distance per hour than on asphalt.
+- Surfaces come from OpenStreetMap tags and are not checked on the ground. Forest roads can be rough or gated.
+- North of Namsos there is almost no through gravel, so the track is the same as the main route.
+
+Stages that differ from the main route:
+
+| Stage | km | Climb m | Gravel km | Main route gravel km |
+|---|--:|--:|--:|--:|
+| 3. Kragerø – Arendal | 83 | 780 | 3 | 0 |
+| 4. Arendal – Mandal | 123 | 740 | 10 | 3 |
+| 9. Haukeligrend – Røldal | 57 | 760 | 4 | 0 |
+| 15. Tyinkrysset – Beitostølen (Slettefjell) | 55 | 1170 | 29 | new |
+| 16. Beitostølen – Skåbu (Jotunheimvegen) | 76 | 880 | 53 | new |
+| 17. Skåbu – Vågåmo (Murudalen) | 69 | 770 | 44 | new |
+| 18. Vågåmo – Dombås (Slådalsvegen) | 48 | 1050 | 28 | new |
+| 19. Dombås – Berkåk (Dovrefjell) | 128 | 1250 | 27 | 24 |
+| 22. Steinkjer – Namsos | 98 | 1010 | 29 | 1 |
+| 23. Namsos – Foldereid | 105 | 1000 | 5 | 1 |
+| 24. Foldereid – Brønnøysund | 95 | 360 | 6 | 0 |
+| 32. Sortland – Andenes | 112 | 250 | 11 | 0 |
+
+**Tyinkrysset – Beitostølen (Slettefjell)**
+
+- **Vangsmjøse** (on the route). Long lake under the Grindane peaks on the way down Valdres.
+- **Slettefjell** (on the route). Gravel toll road over open mountain at about 1,300 m, with the whole Jotunheimen skyline to the north.
+- **Bitihorn** (detour, 3 h hike from Fv51 north of Beitostølen). 1,607 m summit standing alone above the lake Bygdin.
+
+**Beitostølen – Skåbu (Jotunheimvegen)**
+
+- **Bygdin** (on the route). Mountain lake 25 km long at 1,060 m, running straight into Jotunheimen.
+- **Jotunheimvegen** (on the route). 45 km gravel toll road at 1,000 to 1,150 m along the lakes Vinstre and Kaldfjorden, between Jotunheimen and the Gudbrandsdalen hills.
+- **Skåbu** (on the route). One of Norway's highest villages, at about 850 m.
+
+**Skåbu – Vågåmo (Murudalen)**
+
+- **Murudalen** (on the route). Quiet gravel valley road through pine forest and summer farms.
+- **Ridderspranget** (detour, +8 km return). Narrow gorge where the river Sjoa is squeezed between rock walls.
+- **Besseggen and Gjende** (detour, +66 km return from Randsverk, then a full day on foot). Norway's most walked ridge, between the green lake Gjende and the blue Bessvatnet.
+- **Lemonsjøen** (on the route). Lake at 860 m with the Jotunheimen peaks behind.
+
+**Vågåmo – Dombås (Slådalsvegen)**
+
+- **Slådalsvegen** (on the route). Gravel toll road over the mountain at about 1,250 m. Jotunheimen behind, Dovrefjell and Rondane ahead.
+- **Lesja** (on the route). Wide farming valley at 600 m, on the watershed between east and west.
+
+Backup cabins on the new stages:
+
+| Stage | Cabin | Type | Off track km | Altitude m | Beds | DNT key | Run by |
+|---|---|---|--:|--:|--:|:-:|---|
+| Beitostølen – Skåbu (Jotunheimvegen) | [Bygdin Høyfjellshotell](https://ut.no/hytte/bygdin-hoeyfjellhotell) | Staffed lodge | 0.1 | 1065 | 80 |  |  |
+| Beitostølen – Skåbu (Jotunheimvegen) | [Haugseter fjellstue](https://ut.no/hytte/haugseter-fjellstue-a-s) | Staffed lodge | 0.1 | 1044 | 60 |  |  |
+| Beitostølen – Skåbu (Jotunheimvegen) | [Oskampen](https://ut.no/hytte/oskampen) | Self-service cabin | 1.9 | 1175 | 12 | yes | DNT Oslo og Omegn |
+
 <!-- VARIANTS:END -->
 
 <!-- LANDMARKS:START -->

@@ -252,4 +252,20 @@ VLANDMARKS={
 "Krokstadøra – Trondheim":[
    (R,"Orkdalsfjorden",None,63.305,9.850,"","Back at Trondheimsfjorden for the last 40 km into the city."),
    (R,"Trondheimsfjorden",None,63.380,10.200,"","The road follows the fjord shore past Børsa and Buvika.")],
+"Tyinkrysset – Beitostølen (Slettefjell)":[
+   (R,"Vangsmjøse",None,61.130,8.650,"","Long lake under the Grindane peaks on the way down Valdres."),
+   (R,"Slettefjell",None,61.190,8.800,"","Gravel toll road over open mountain at about 1,300 m, with the whole Jotunheimen skyline to the north."),
+   (D,"Bitihorn","Bitihorn",61.290,8.800,"3 h hike from Fv51 north of Beitostølen","1,607 m summit standing alone above the lake Bygdin.")],
+"Beitostølen – Skåbu (Jotunheimvegen)":[
+   (R,"Bygdin",None,61.327,8.790,"","Mountain lake 25 km long at 1,060 m, running straight into Jotunheimen."),
+   (R,"Jotunheimvegen",None,61.360,9.050,"","45 km gravel toll road at 1,000 to 1,150 m along the lakes Vinstre and Kaldfjorden, between Jotunheimen and the Gudbrandsdalen hills."),
+   (R,"Skåbu",None,61.526,9.409,"","One of Norway's highest villages, at about 850 m.")],
+"Skåbu – Vågåmo (Murudalen)":[
+   (R,"Murudalen",None,61.620,9.200,"","Quiet gravel valley road through pine forest and summer farms."),
+   (D,"Ridderspranget","Ridderspranget",61.670,9.030,"+8 km return","Narrow gorge where the river Sjoa is squeezed between rock walls."),
+   (D,"Besseggen and Gjende","Gjendesheim",61.495,8.810,"+66 km return from Randsverk, then a full day on foot","Norway's most walked ridge, between the green lake Gjende and the blue Bessvatnet."),
+   (R,"Lemonsjøen",None,61.776,9.070,"","Lake at 860 m with the Jotunheimen peaks behind.")],
+"Vågåmo – Dombås (Slådalsvegen)":[
+   (R,"Slådalsvegen",None,61.990,8.980,"","Gravel toll road over the mountain at about 1,250 m. Jotunheimen behind, Dovrefjell and Rondane ahead."),
+   (R,"Lesja",None,62.118,8.864,"","Wide farming valley at 600 m, on the watershed between east and west.")],
 }

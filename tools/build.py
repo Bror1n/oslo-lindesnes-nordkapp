@@ -101,10 +101,18 @@ variants=[]
 for v in VARIANTS:
     S=vr[v["id"]]; vh=huts_for(S)
     a=names.index(v["first"])+1; b=names.index(v["last"])+1
-    E=[entry(s,VLANDMARKS.get(s["name"],[]),vh[i]) for i,s in enumerate(S)]
+    E=[entry(s,VLANDMARKS.get(s["name"]) or (LANDMARKS.get(names.index(s["name"])+1,[]) if s["name"] in names else []),vh[i]) for i,s in enumerate(S)]
     repl=main[a-1:b]
+    if v.get("gravel"):     # whole-route mode: keep the part colours, flag the stages that differ from the main route
+        part=0
+        for e in E:
+            e["p"]=part
+            if e["name"].endswith("Lindesnes fyr"): part=1
+            if e["name"].endswith("Trondheim"): part=2
+            m=main[names.index(e["name"])] if e["name"] in names else None
+            e["chg"]=int(m is None or abs(m["km"]-e["km"])>1 or abs(m["unp"]-e["unp"])>1)
     variants.append({"id":v["id"],"title":v["title"],"blurb":v["blurb"],"first":a,"last":b,"stages":E,
-        "dkm":sum(e["km"] for e in E)-sum(e["km"] for e in repl),"dasc":sum(e["asc"] for e in E)-sum(e["asc"] for e in repl),"ddays":len(E)-len(repl)})
+        "whole":int(bool(v.get("gravel"))),"dunp":sum(e["unp"] for e in E)-sum(e["unp"] for e in repl),"dkm":sum(e["km"] for e in E)-sum(e["km"] for e in repl),"dasc":sum(e["asc"] for e in E)-sum(e["asc"] for e in repl),"ddays":len(E)-len(repl)})
 b_end=next(i for i,s in enumerate(st,1) if s["name"].endswith("Trondheim"))
 DATA={"main":main,"variants":variants,"parts":[[1,5,"A · Oslo – Lindesnes","#c2410c"],[6,b_end,"B · Lindesnes – Trondheim","#15803d"],[b_end+1,len(main),"C · Trondheim – Nordkapp","#1d4ed8"]]}
 
@@ -141,12 +149,25 @@ def lm_lines(e):
 def hut_rows(label,e):
     return [f'| {label} | {"["+h["n"]+"]("+h["w"]+")" if h["w"] else h["n"]} | {h["c"]} | {h["d"]} | {h["e"]} | {h["cap"]} | {"yes" if h["lock"] else ""} | {h["op"]} |' for h in e["huts"]]
 sgn=lambda x:f'+{x}' if x>0 else (f'−{-x}' if x<0 else '±0')
-vm=["## Alternative routes","",f"{[0,'One','Two','Three','Four','Five','Six','Seven'][len(variants)]} variants can replace part of the main route. Variants that cover the same stages cannot be combined. Switch them on in [kart.html](kart.html) to see the line and the new totals. Each has its own GPX in [variants/](variants/).","",
+vm=["## Alternative routes","",f"{[0,'One','Two','Three','Four','Five','Six','Seven'][sum(1 for v in variants if not v['whole'])]} variants can replace part of the main route. Variants that cover the same stages cannot be combined. Switch them on in [kart.html](kart.html) to see the line and the new totals. Each has its own GPX in [variants/](variants/).","",
     "| Variant | Replaces stages | Distance | Climbing | Days |","|---|---|--:|--:|--:|"]
 for v,V in zip(variants,VARIANTS):
+    if v["whole"]: continue
     vm.append(f'| {v["title"]} | {v["first"]}–{v["last"]}' .replace(f'{v["first"]}–{v["first"]}',str(v["first"]))+f' | {sgn(v["dkm"])} km | {sgn(v["dasc"])} m | {sgn(v["ddays"])} |')
 vm.append("")
 for v,V in zip(variants,VARIANTS):
+    if v["whole"]:
+        vm+=[f'### {v["title"]}',"",v["blurb"],"",f'Compared with the main route: {sgn(v["dunp"])} km gravel, {sgn(v["dkm"])} km, {sgn(v["dasc"])} m climbing, {sgn(v["ddays"])} day. It is a separate button on the map and cannot be combined with the variants above.',""]
+        for n in V.get("notes",[]): vm.append(f'- {n}')
+        vm+=["","Stages that differ from the main route:","","| Stage | km | Climb m | Gravel km | Main route gravel km |","|---|--:|--:|--:|--:|"]
+        for i,e in enumerate(v["stages"],1):
+            if e["chg"]: vm.append(f'| {i}. {e["name"]} | {e["km"]} | {e["asc"]} | {e["unp"]} | {main[names.index(e["name"])]["unp"] if e["name"] in names else "new"} |')
+        vm.append("")
+        for e in v["stages"]:
+            if e["name"] not in names and e["lm"]: vm+=[f'**{e["name"]}**',""]+lm_lines(e)+[""]
+        hr=[r for e in v["stages"] if e["name"] not in names for r in hut_rows(e["name"],e)]
+        if hr: vm+=["Backup cabins on the new stages:","","| Stage | Cabin | Type | Off track km | Altitude m | Beds | DNT key | Run by |","|---|---|---|--:|--:|--:|:-:|---|"]+hr+[""]
+        continue
     vm+=[f'### {v["title"]}',"",v["blurb"],""]
     for n in V.get("notes",[]): vm.append(f'- {n}')
     if V.get("notes"): vm.append("")
